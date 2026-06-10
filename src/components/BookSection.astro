@@ -1,0 +1,93 @@
+<section class="book-section">
+  <div class="book-section-inner">
+    <div class="book-cover">
+      <span>[ BOOK<br/>COVER ]</span>
+    </div>
+    <div class="book-info">
+      <h3>Your DREAMS Are Good Enough</h3>
+      <p>Check out the artist's other work — a children's book by Mike Traina</p>
+    </div>
+    <a href="#" class="book-cta">LEARN MORE ›</a>
+  </div>
+</section>
+
+<style>
+  .book-section {
+    border-top: 1.5px solid var(--black);
+    padding: 40px;
+    background: var(--gray-100);
+  }
+
+  .book-section-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .book-cover {
+    width: 100px;
+    height: 140px;
+    border: 1.5px dashed var(--gray-400);
+    background: var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .book-cover span {
+    font-size: 8px;
+    color: var(--gray-500);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .book-info h3 {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+  }
+
+  .book-info p {
+    font-size: 10px;
+    color: var(--gray-500);
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .book-cta {
+    border: 1.5px solid var(--black);
+    padding: 10px 24px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--black);
+    transition: all 0.2s;
+  }
+
+  .book-cta:hover {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  @media (max-width: 768px) {
+    .book-section { padding: 32px 24px; }
+    .book-section-inner { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .book-cover { width: 80px; height: 110px; }
+    .book-info h3 { font-size: 12px; }
+    .book-info p { font-size: 9px; }
+  }
+
+  @media (max-width: 600px) {
+    .book-section { padding: 24px 16px; }
+  }
+</style>

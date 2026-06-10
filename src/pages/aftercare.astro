@@ -1,0 +1,350 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import BookSection from '../components/BookSection.astro';
+---
+
+<Layout title="Aftercare | Art District Inc.">
+  <Nav currentPage="aftercare" />
+  <div class="page-title">
+    <div class="label">GUIDE</div>
+    <div class="flex">
+      <h1>Aftercare</h1>
+      <div class="sub">YOUR INK IS AN INVESTMENT. PROTECT IT.</div>
+    </div>
+  </div>
+
+  <div class="timeline-section">
+    <div class="meta-label">HEALING TIMELINE</div>
+    <div class="timeline-grid">
+      <div class="tl-item"><div class="tl-num">1–3</div><div class="tl-days">DAYS</div><div class="tl-desc">RAW & TENDER<br/>MOST SENSITIVE PERIOD</div></div>
+      <div class="tl-item"><div class="tl-num">4–7</div><div class="tl-days">DAYS</div><div class="tl-desc">PEELING & ITCHING<br/>DO NOT SCRATCH</div></div>
+      <div class="tl-item"><div class="tl-num">2–3</div><div class="tl-days">WEEKS</div><div class="tl-desc">SURFACE HEALED<br/>DEEPER LAYERS SETTLING</div></div>
+      <div class="tl-item"><div class="tl-num">2–3</div><div class="tl-days">MONTHS</div><div class="tl-desc">FULLY SETTLED<br/>COLOR & LINES LOCKED IN</div></div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <SectionTitle label="STEP BY STEP INSTRUCTIONS" />
+    <div class="steps-grid">
+      {[
+        { num: '01', label: 'WRAP REMOVAL', desc: '[ REMOVE WRAP AFTER 2–4 HRS. WASH GENTLY WITH CLEAN HANDS. ]' },
+        { num: '02', label: 'WASHING', desc: '[ USE FRAGRANCE FREE SOAP. PAT DRY WITH CLEAN PAPER TOWEL. ]' },
+        { num: '03', label: 'MOISTURIZING', desc: '[ APPLY THIN LAYER OF UNSCENTED LOTION 2–3X DAILY. ]' },
+        { num: '04', label: 'SUN PROTECTION', desc: '[ AVOID DIRECT SUN 3 WEEKS. USE SPF 50+ AFTER HEALED. ]' },
+      ].map(step => (
+        <div class="step-card">
+          <div class="step-header"><span class="step-num">{step.num}</span><span class="step-label">{step.label}</span></div>
+          <div class="step-body">
+            <div class="placeholder-img" style="margin:12px;height:160px"><span style="font-size:9px;color:var(--gray-400)">[ PHOTO ]</span></div>
+            <div class="step-text"><div class="placeholder-box">{step.desc}</div></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-section">
+    <SectionTitle label="WHAT TO AVOID" />
+    <div class="avoid-grid">
+      {[
+        { icon: '🚫', label: 'SOAKING', desc: 'NO POOLS, OCEAN OR BATHS DURING HEALING' },
+        { icon: '🚫', label: 'PICKING', desc: 'DO NOT PICK, SCRATCH OR PEEL' },
+        { icon: '🚫', label: 'DIRECT SUN', desc: 'NO DIRECT SUNLIGHT FOR MINIMUM 3 WEEKS' },
+        { icon: '🚫', label: 'TIGHT CLOTHING', desc: 'KEEP FABRIC AWAY FROM FRESH INK' },
+      ].map(item => (
+        <div class="avoid-item">
+          <div class="avoid-icon">{item.icon}</div>
+          <div class="avoid-label">{item.label}</div>
+          <div class="avoid-desc">{item.desc}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-section">
+    <SectionTitle label="LONG TERM CARE" />
+    <div class="longterm-grid">
+      <div class="lt-card"><div class="lt-title">KEEP IT MOISTURIZED</div><div class="placeholder-box">[ LONG TERM MOISTURIZING INSTRUCTIONS ]</div></div>
+      <div class="lt-card"><div class="lt-title">SUN EXPOSURE</div><div class="placeholder-box">[ LONG TERM SUN CARE INSTRUCTIONS ]</div></div>
+      <div class="lt-card"><div class="lt-title">TOUCH UPS</div><div class="placeholder-box">[ TOUCH UP POLICY & TIMELINE ]</div></div>
+    </div>
+  </section>
+
+  <div class="concern-banner">
+    <div>
+      <div class="meta-label">HAVE A CONCERN?</div>
+      <div class="placeholder-box">[ IF YOUR TATTOO SHOWS SIGNS OF INFECTION OR UNUSUAL HEALING PLEASE REACH OUT DIRECTLY ]</div>
+    </div>
+    <a href="/contact" class="btn">CONTACT US ›</a>
+  </div>
+
+  <BookSection />
+  <Footer />
+</Layout>
+
+<style>
+  .page-title {
+    padding: 40px 40px 30px;
+    border-bottom: 1.5px solid var(--black);
+  }
+
+  .page-title .label {
+    font-family: var(--font-heading);
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .page-title .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .page-title h1 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  .page-title .sub {
+    font-size: 9px;
+    color: var(--gray-500);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .timeline-section {
+    padding: 40px;
+    border-bottom: 1.5px solid var(--black);
+    background: var(--gray-100);
+  }
+
+  .meta-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 24px;
+  }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border: 1.5px solid var(--black);
+  }
+
+  .tl-item {
+    padding: 24px;
+    border-right: 1.5px solid var(--black);
+    text-align: center;
+  }
+
+  .tl-item:last-child { border-right: none; }
+
+  .tl-num {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+
+  .tl-days {
+    font-size: 8px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .tl-desc {
+    font-size: 9px;
+    color: var(--gray-600);
+    line-height: 1.8;
+  }
+
+  .content-section {
+    padding: 60px 40px;
+    border-bottom: 1.5px solid var(--black);
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .step-card {
+    border: 1.5px solid var(--black);
+    overflow: hidden;
+  }
+
+  .step-header {
+    background: var(--black);
+    color: var(--white);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .step-num {
+    font-family: var(--font-heading);
+    font-size: 18px;
+  }
+
+  .step-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .step-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .step-text {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .placeholder-img {
+    background: var(--gray-200);
+    border: 1.5px dashed var(--gray-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .placeholder-box {
+    background: var(--gray-100);
+    border: 1px dashed var(--gray-300);
+    padding: 16px;
+    font-size: 10px;
+    color: var(--gray-500);
+    line-height: 1.9;
+  }
+
+  .avoid-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  .avoid-item {
+    border: 1.5px solid var(--black);
+    padding: 24px;
+    text-align: center;
+  }
+
+  .avoid-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .avoid-label {
+    font-family: var(--font-heading);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .avoid-desc {
+    font-size: 9px;
+    color: var(--gray-600);
+    line-height: 1.8;
+  }
+
+  .longterm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .lt-card {
+    border-left: 3px solid var(--black);
+    padding: 20px 24px;
+    background: var(--gray-100);
+  }
+
+  .lt-title {
+    font-family: var(--font-heading);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .concern-banner {
+    padding: 40px;
+    border-bottom: 1.5px solid var(--black);
+    background: var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .concern-banner .placeholder-box {
+    margin-top: 8px;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 1.5px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+
+  @media (max-width: 1024px) {
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .avoid-grid { grid-template-columns: 1fr 1fr; }
+    .longterm-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .page-title { padding: 24px 16px; }
+    .page-title .flex { flex-direction: column; align-items: flex-start; }
+    .page-title h1 { font-size: 24px; }
+    .timeline-section { padding: 24px 16px; }
+    .timeline-grid { grid-template-columns: 1fr 1fr; }
+    .tl-item:nth-child(2) { border-right: none; }
+    .tl-item:nth-child(1),
+    .tl-item:nth-child(2) { border-bottom: 1.5px solid var(--black); }
+    .content-section { padding: 40px 16px; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .step-body { grid-template-columns: 1fr; }
+    .avoid-grid { grid-template-columns: 1fr; }
+    .longterm-grid { grid-template-columns: 1fr; }
+    .concern-banner { flex-direction: column; padding: 24px 16px; text-align: center; }
+  }
+</style>

@@ -1,0 +1,309 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import BookSection from '../components/BookSection.astro';
+---
+
+<Layout title="Artwork | Art District Inc.">
+  <Nav currentPage="artwork" />
+  <div class="page-title">
+    <div class="label">PORTFOLIO</div>
+    <div class="flex">
+      <h1>Artwork</h1>
+      <div class="sub">FROM SKIN TO STREETS · RAW VISUAL CULTURE</div>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-group">
+      <span class="filter active" data-filter="all">ALL</span>
+      <span class="filter" data-filter="tattoo">TATTOOS</span>
+      <span class="filter" data-filter="mural">MURALS</span>
+      <span class="filter" data-filter="fineart">FINE ART</span>
+      <span class="filter" data-filter="sketch">SKETCHES</span>
+    </div>
+    <div class="filter-count">[ XX ] PIECES</div>
+  </div>
+
+  <div class="gallery-section">
+    <div class="artwork-grid-1">
+      <div class="placeholder-img" style="height:360px;position:relative">
+        <span>[ FEATURED PIECE — LARGE FORMAT ]</span>
+        <span class="tag" style="position:absolute;bottom:12px;left:12px;background:var(--white)">TATTOO · BLACK & GREY</span>
+      </div>
+      <div class="grid-stack">
+        <div class="placeholder-img" style="position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 2 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">MURAL</span></div>
+        <div class="placeholder-img" style="position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 3 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">TATTOO</span></div>
+      </div>
+      <div class="grid-stack">
+        <div class="placeholder-img" style="position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 4 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">FINE ART</span></div>
+        <div class="placeholder-img" style="position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 5 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">SKETCH</span></div>
+      </div>
+    </div>
+    <div class="artwork-grid-3">
+      {[6,7,8,9].map(i => (
+        <div class="placeholder-img" style="height:220px;position:relative">
+          <span style="font-size:9px;color:var(--gray-500)">[ PIECE {i} ]</span>
+          <span class="tag-sm" style="position:absolute;bottom:8px;left:8px">{['TATTOO','MURAL','FINE ART','TATTOO'][i-6]}</span>
+        </div>
+      ))}
+    </div>
+    <div class="artwork-grid-4">
+      <div class="placeholder-img" style="height:240px;position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 10 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">SKETCH</span></div>
+      <div class="placeholder-img" style="height:240px;position:relative"><span style="font-size:10px">[ STATEMENT PIECE — WIDE FORMAT ]</span><span class="tag" style="position:absolute;bottom:8px;left:12px;background:var(--white)">MURAL · LARGE FORMAT</span></div>
+      <div class="placeholder-img" style="height:240px;position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 12 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">TATTOO</span></div>
+    </div>
+  </div>
+
+  <div class="gallery-footer">
+    <div>— SHOWING 12 OF [ XX ] PIECES —</div>
+    <span class="btn-sm">LOAD MORE ↓</span>
+  </div>
+
+  <div class="cta-banner">
+    <div>
+      <div class="meta-label">INTERESTED IN A PIECE?</div>
+      <div class="title-lg">Every piece is custom. Let's build yours.</div>
+    </div>
+    <a href="/contact" class="btn">BOOK NOW ›</a>
+  </div>
+
+  <BookSection />
+  <Footer />
+</Layout>
+
+<style>
+  .page-title {
+    padding: 40px 40px 30px;
+    border-bottom: 1.5px solid var(--black);
+  }
+
+  .page-title .label {
+    font-family: var(--font-heading);
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .page-title .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .page-title h1 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  .page-title .sub {
+    font-size: 9px;
+    color: var(--gray-500);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    border-bottom: 1.5px solid var(--black);
+    background: var(--gray-100);
+  }
+
+  .filter-group {
+    display: flex;
+    gap: 8px;
+  }
+
+  .filter {
+    font-family: var(--font-heading);
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border: 1.5px solid var(--black);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .filter.active,
+  .filter:hover {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .filter-count {
+    font-size: 9px;
+    color: var(--gray-500);
+    letter-spacing: 1px;
+  }
+
+  .gallery-section {
+    padding: 32px 40px;
+    border-bottom: 1.5px solid var(--black);
+  }
+
+  .artwork-grid-1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .artwork-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .artwork-grid-4 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 12px;
+  }
+
+  .grid-stack {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .placeholder-img {
+    background: var(--gray-200);
+    border: 1.5px dashed var(--gray-400);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .tag {
+    font-family: var(--font-heading);
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border: 1.5px solid var(--black);
+    text-transform: uppercase;
+  }
+
+  .tag-sm {
+    font-family: var(--font-heading);
+    font-size: 7px;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    border: 1px solid var(--black);
+    text-transform: uppercase;
+  }
+
+  .gallery-footer {
+    padding: 32px 40px;
+    border-bottom: 1.5px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .gallery-footer div {
+    font-size: 9px;
+    color: var(--gray-500);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .btn-sm {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 1.5px solid var(--black);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-sm:hover {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .cta-banner {
+    padding: 60px 40px;
+    border-bottom: 1.5px solid var(--black);
+    background: var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .meta-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 8px;
+  }
+
+  .title-lg {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 1.5px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+
+  @media (max-width: 1024px) {
+    .artwork-grid-1, .artwork-grid-4 { grid-template-columns: 1fr 1fr; }
+    .artwork-grid-3 { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .page-title { padding: 24px 16px; }
+    .page-title .flex { flex-direction: column; align-items: flex-start; }
+    .page-title h1 { font-size: 24px; }
+    .filter-bar { flex-direction: column; gap: 12px; align-items: flex-start; padding: 16px; }
+    .filter-group { flex-wrap: wrap; }
+    .gallery-section { padding: 24px 16px; }
+    .artwork-grid-1, .artwork-grid-3, .artwork-grid-4 { grid-template-columns: 1fr; }
+    .gallery-footer { padding: 24px 16px; flex-direction: column; gap: 12px; }
+    .cta-banner { padding: 40px 24px; flex-direction: column; text-align: center; }
+    .placeholder-img[style*="height:360px"] { height: 240px !important; }
+    .placeholder-img[style*="height:240px"] { height: 160px !important; }
+  }
+</style>

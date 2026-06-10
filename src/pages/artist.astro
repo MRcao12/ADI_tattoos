@@ -1,0 +1,300 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import BookSection from '../components/BookSection.astro';
+---
+
+<Layout title="Artist | Art District Inc.">
+  <Nav currentPage="artist" />
+  <div class="page-title">
+    <div class="label">ARTIST</div>
+    <div class="flex">
+      <h1>[ ARTIST NAME ]</h1>
+      <div class="sub">OWNER & LEAD ARTIST · ART DISTRICT INC.</div>
+    </div>
+  </div>
+
+  <div class="artist-layout">
+    <div class="artist-portrait">
+      <div class="placeholder-img" style="height:460px">
+        <span>[ ARTIST PORTRAIT ]</span>
+        <small>HIGH RES · FULL BLEED</small>
+      </div>
+    </div>
+    <div class="artist-detail">
+      <div class="meta-label">SPECIALTIES</div>
+      <div class="tags">
+        <span class="tag">BLACK & GREY</span>
+        <span class="tag">REALISM</span>
+        <span class="tag">FINE LINE</span>
+        <span class="tag">MURALS</span>
+        <span class="tag">PORTRAITS</span>
+      </div>
+      <div class="meta-label" style="margin-top:32px">ABOUT</div>
+      <div class="placeholder-box" style="min-height:100px">
+        [ ARTIST BIO PARAGRAPH — 3 TO 4 SENTENCES ]
+      </div>
+      <div class="meta-label" style="margin-top:32px">CONTACT</div>
+      <div class="contact-info">
+        <div class="contact-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>[ EMAIL ADDRESS ]</span>
+        </div>
+        <div class="contact-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span>[ @INSTAGRAM HANDLE ]</span>
+        </div>
+      </div>
+      <a href="/contact" class="btn" style="width:100%;text-align:center">BOOK NOW</a>
+      <div class="contact-card">
+        <div class="contact-card-label">— CONTACT TO BOOK —</div>
+        <div class="contact-card-links">
+          <div class="contact-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>[ EMAIL ]</span>
+          </div>
+        </div>
+        <div class="contact-card-note">APPOINTMENTS ONLY</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <SectionTitle label="ARTIST AT WORK" />
+    <div class="artist-work-grid">
+      <div class="placeholder-img" style="height:340px">
+        <span>[ ARTIST WORKING ON CLIENT ]</span>
+        <small>ACTION SHOT</small>
+      </div>
+      <div class="artist-work-sub">
+        <div class="placeholder-img" style="min-height:160px"><span style="font-size:9px;color:var(--gray-500)">[ WORK PHOTO 1 ]</span><span class="tag-sm">TATTOO</span></div>
+        <div class="placeholder-img" style="min-height:160px"><span style="font-size:9px;color:var(--gray-500)">[ WORK PHOTO 2 ]</span><span class="tag-sm">TATTOO</span></div>
+        <div class="placeholder-img" style="min-height:160px"><span style="font-size:9px;color:var(--gray-500)">[ WORK PHOTO 3 ]</span><span class="tag-sm">MURAL</span></div>
+        <div class="placeholder-img" style="min-height:160px"><span style="font-size:9px;color:var(--gray-500)">[ WORK PHOTO 4 ]</span><span class="tag-sm">FINE ART</span></div>
+      </div>
+    </div>
+  </section>
+
+  <BookSection />
+  <Footer />
+</Layout>
+
+<style>
+  .page-title {
+    padding: 40px 40px 30px;
+    border-bottom: 1.5px solid var(--black);
+  }
+
+  .page-title .label {
+    font-family: var(--font-heading);
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .page-title .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .page-title h1 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  .page-title .sub {
+    font-size: 9px;
+    color: var(--gray-500);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .artist-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1.5px solid var(--black);
+  }
+
+  .artist-portrait {
+    border-right: 1.5px solid var(--black);
+    padding: 20px;
+  }
+
+  .artist-detail {
+    padding: 40px;
+  }
+
+  .placeholder-img {
+    background: var(--gray-200);
+    border: 1.5px dashed var(--gray-400);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .placeholder-box {
+    background: var(--gray-100);
+    border: 1px dashed var(--gray-300);
+    padding: 20px;
+    font-size: 10px;
+    color: var(--gray-500);
+    line-height: 2;
+  }
+
+  .meta-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
+  .tag {
+    font-family: var(--font-heading);
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border: 1.5px solid var(--black);
+    text-transform: uppercase;
+  }
+
+  .tag-sm {
+    font-family: var(--font-heading);
+    font-size: 7px;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    border: 1px solid var(--black);
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: var(--gray-600);
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 1.5px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 16px;
+  }
+
+  .btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+
+  .contact-card {
+    border: 1.5px dashed var(--gray-400);
+    border-top: none;
+    background: var(--gray-100);
+    padding: 16px;
+  }
+
+  .contact-card-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .contact-card-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .contact-card-note {
+    margin-top: 10px;
+    font-size: 9px;
+    color: var(--gray-400);
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .content-section {
+    padding: 60px 40px;
+    border-bottom: 1.5px solid var(--black);
+  }
+
+  .artist-work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .artist-work-sub {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .placeholder-img small {
+    font-size: 8px;
+    color: var(--gray-400);
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 1024px) {
+    .artist-layout { grid-template-columns: 1fr; }
+    .artist-portrait { border-right: none; }
+    .artist-work-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .page-title { padding: 24px 16px; }
+    .page-title .flex { flex-direction: column; align-items: flex-start; }
+    .page-title h1 { font-size: 24px; }
+    .artist-detail { padding: 24px 16px; }
+    .artist-work-grid, .artist-work-sub { grid-template-columns: 1fr; }
+    .content-section { padding: 40px 16px; }
+    .placeholder-img[style*="height:460px"] { height: 300px !important; }
+    .placeholder-img[style*="height:340px"] { height: 220px !important; }
+  }
+</style>
