@@ -37,33 +37,48 @@ import BookSection from '../components/BookSection.astro';
         </div>
       </div>
 
-      <div class="meta-label" style="margin-top:48px">HOURS</div>
+      <div class="meta-label" style="margin-top:40px">HOURS</div>
       <div class="hours-table">
         <div class="hours-row"><span>MON — FRI</span><span>[ HOURS ]</span></div>
         <div class="hours-row"><span>SATURDAY</span><span>[ HOURS ]</span></div>
         <div class="hours-row"><span>SUNDAY</span><span>BY APPT ONLY</span></div>
       </div>
-      <div class="appt-note">ALL SESSIONS BY APPOINTMENT ONLY</div>
     </div>
 
     <div class="contact-map-col">
-      <div class="meta-label">FIND US</div>
-      <div class="loc-grid">
-        <div class="placeholder-img" style="height:160px"><span>[ STOREFRONT PHOTO 1 ]</span></div>
-        <div class="placeholder-img" style="height:160px"><span>[ STOREFRONT PHOTO 2 ]</span></div>
+      <form class="contact-form" netlify>
+        <div class="meta-label">SEND A MESSAGE</div>
+        <input type="text" name="name" placeholder="YOUR NAME" required />
+        <input type="email" name="email" placeholder="YOUR EMAIL" required />
+        <select name="reason" required>
+          <option value="" disabled selected>REASON</option>
+          <option value="booking">BOOKING INQUIRY</option>
+          <option value="commission">COMMISSION REQUEST</option>
+          <option value="question">GENERAL QUESTION</option>
+        </select>
+        <textarea name="message" placeholder="MESSAGE" rows="8" required></textarea>
+        <button type="submit">SEND</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="hours-strip">
+    <div class="meta-label">FIND US</div>
+    <div class="loc-grid">
+      <div class="placeholder-img" style="height:160px"><span>[ STOREFRONT PHOTO 1 ]</span></div>
+      <div class="placeholder-img" style="height:160px"><span>[ STOREFRONT PHOTO 2 ]</span></div>
+    </div>
+    <div class="placeholder-img" style="height:260px;margin-bottom:12px">
+      <span>[ GOOGLE MAPS EMBED ]</span>
+      <small>LIVE INTERACTIVE MAP</small>
+    </div>
+    <div class="address-block">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div>
+        <div>[ 26489 FULL STREET ADDRESS ]</div>
+        <div class="addr-sub">[ CITY, STATE, ZIP ]</div>
       </div>
-      <div class="placeholder-img" style="height:260px;margin-bottom:12px">
-        <span>[ GOOGLE MAPS EMBED ]</span>
-        <small>LIVE INTERACTIVE MAP</small>
-      </div>
-      <div class="address-block">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div>
-          <div>[ 26489 FULL STREET ADDRESS ]</div>
-          <div class="addr-sub">[ CITY, STATE, ZIP ]</div>
-        </div>
-        <span class="dir-btn">GET DIRECTIONS ›</span>
-      </div>
+      <span class="dir-btn">GET DIRECTIONS ›</span>
     </div>
   </div>
 
@@ -94,7 +109,7 @@ import BookSection from '../components/BookSection.astro';
 
 <style>
   .page-title {
-    padding: 40px 40px 30px;
+    padding: 24px 40px;
     border-bottom: 1.5px solid var(--black);
   }
 
@@ -190,6 +205,48 @@ import BookSection from '../components/BookSection.astro';
     margin-left: auto;
     font-size: 16px;
     color: var(--gray-400);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    background: var(--white);
+    border: 1.5px solid var(--black);
+    padding: 12px 14px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    color: var(--black);
+    outline: none;
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+  }
+
+  .contact-form button {
+    background: var(--black);
+    color: var(--white);
+    border: 2px solid var(--black);
+    padding: 14px 0;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .contact-form button:hover {
+    background: var(--orange);
+    border-color: var(--orange);
   }
 
   .hours-table {
@@ -288,6 +345,11 @@ import BookSection from '../components/BookSection.astro';
     flex-shrink: 0;
   }
 
+  .hours-strip {
+    padding: 50px 5%;
+    border-bottom: 1.5px solid var(--black);
+  }
+
   .social-section {
     padding: 60px 40px;
     border-bottom: 1.5px solid var(--black);
@@ -337,11 +399,12 @@ import BookSection from '../components/BookSection.astro';
   }
 
   @media (max-width: 600px) {
-    .page-title { padding: 24px 16px; }
+    .page-title { padding: 16px 16px; }
     .page-title .flex { flex-direction: column; align-items: flex-start; }
     .page-title h1 { font-size: 24px; }
     .contact-info-col { padding: 32px 16px; }
     .contact-map-col { padding: 32px 16px; }
+    .hours-strip { padding: 32px 16px; }
     .social-section { padding: 40px 16px; }
     .social-card { min-width: 120px; padding: 20px 24px; }
     .hours-row span:first-child,

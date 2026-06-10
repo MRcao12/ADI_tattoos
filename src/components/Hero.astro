@@ -20,8 +20,7 @@
     <small>CUSTOM TATTOO · "PURSUIT OF HAPPINESS"</small>
   </div>
   <div class="hero-overlay">
-    <h1>ART DISTRICT INC.</h1>
-    <p>FROM SKIN TO STREETS · RAW VISUAL CULTURE</p>
+    <img src="/ADIlogo1web.png" alt="Art District Inc." class="hero-logo" />
     <a href="/artwork" class="hero-cta">EXPLORE THE WORK</a>
   </div>
   <button class="hero-arrow left" id="hero-prev">‹</button>
@@ -74,7 +73,7 @@
     position: relative;
     height: 480px;
     overflow: hidden;
-    background: var(--gray-900);
+    background: var(--white);
   }
 
   .hero-slide {
@@ -111,6 +110,12 @@
     color: var(--white);
     z-index: 2;
     padding: 40px;
+  }
+
+  .hero-logo {
+    max-width: 384px;
+    margin-bottom: 16px;
+    display: block;
   }
 
   .hero-overlay h1 {
