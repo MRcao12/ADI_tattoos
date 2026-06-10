@@ -88,14 +88,15 @@ import BookSection from '../components/BookSection.astro';
 <style>
   .page-title {
     padding: 40px 40px 30px;
-    border-bottom: 1.5px solid var(--black);
+    border-bottom: 1.5px solid var(--border-light);
+    background: var(--card-bg);
   }
 
   .page-title .label {
     font-family: var(--font-heading);
     font-size: 9px;
     letter-spacing: 3px;
-    color: var(--gray-400);
+    color: rgba(255,255,255,0.5);
     text-transform: uppercase;
     margin-bottom: 12px;
   }
@@ -112,11 +113,12 @@ import BookSection from '../components/BookSection.astro';
     font-size: 36px;
     letter-spacing: 2px;
     margin: 0;
+    color: var(--white);
   }
 
   .page-title .sub {
     font-size: 9px;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     letter-spacing: 2px;
     text-transform: uppercase;
     flex-shrink: 0;
@@ -124,27 +126,27 @@ import BookSection from '../components/BookSection.astro';
 
   .timeline-section {
     padding: 40px;
-    border-bottom: 1.5px solid var(--black);
-    background: var(--gray-100);
+    border-bottom: 1.5px solid var(--border-light);
+    background: var(--card-bg);
   }
 
   .meta-label {
     font-size: 9px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     margin-bottom: 24px;
   }
 
   .timeline-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    border: 1.5px solid var(--black);
+    border: 1.5px solid var(--border-light);
   }
 
   .tl-item {
     padding: 24px;
-    border-right: 1.5px solid var(--black);
+    border-right: 1.5px solid var(--border-light);
     text-align: center;
   }
 
@@ -154,11 +156,12 @@ import BookSection from '../components/BookSection.astro';
     font-family: var(--font-heading);
     font-size: 28px;
     margin-bottom: 4px;
+    color: var(--white);
   }
 
   .tl-days {
     font-size: 8px;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 12px;
@@ -166,13 +169,13 @@ import BookSection from '../components/BookSection.astro';
 
   .tl-desc {
     font-size: 9px;
-    color: var(--gray-600);
+    color: rgba(255,255,255,0.7);
     line-height: 1.8;
   }
 
   .content-section {
     padding: 60px 40px;
-    border-bottom: 1.5px solid var(--black);
+    border-bottom: 1.5px solid var(--border-light);
   }
 
   .steps-grid {
@@ -182,12 +185,13 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .step-card {
-    border: 1.5px solid var(--black);
+    border: 1.5px solid var(--border-light);
     overflow: hidden;
+    background: var(--card-bg);
   }
 
   .step-header {
-    background: var(--black);
+    background: var(--near-black);
     color: var(--white);
     padding: 10px 20px;
     display: flex;
@@ -218,12 +222,12 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .placeholder-img {
-    background: var(--gray-200);
-    border: 1.5px dashed var(--gray-400);
+    background: var(--card-bg);
+    border: 1.5px dashed rgba(212,200,184,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     font-family: var(--font-heading);
     font-size: 10px;
     letter-spacing: 1px;
@@ -232,11 +236,11 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .placeholder-box {
-    background: var(--gray-100);
-    border: 1px dashed var(--gray-300);
+    background: var(--card-bg);
+    border: 1px dashed rgba(212,200,184,0.3);
     padding: 16px;
     font-size: 10px;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     line-height: 1.9;
   }
 
@@ -247,9 +251,10 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .avoid-item {
-    border: 1.5px solid var(--black);
+    border: 1.5px solid var(--border-light);
     padding: 24px;
     text-align: center;
+    background: var(--card-bg);
   }
 
   .avoid-icon {
@@ -263,11 +268,12 @@ import BookSection from '../components/BookSection.astro';
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 8px;
+    color: var(--white);
   }
 
   .avoid-desc {
     font-size: 9px;
-    color: var(--gray-600);
+    color: rgba(255,255,255,0.7);
     line-height: 1.8;
   }
 
@@ -278,9 +284,9 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .lt-card {
-    border-left: 3px solid var(--black);
+    border-left: 3px solid var(--orange);
     padding: 20px 24px;
-    background: var(--gray-100);
+    background: var(--card-bg);
   }
 
   .lt-title {
@@ -289,12 +295,13 @@ import BookSection from '../components/BookSection.astro';
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 12px;
+    color: var(--white);
   }
 
   .concern-banner {
     padding: 40px;
-    border-bottom: 1.5px solid var(--black);
-    background: var(--gray-100);
+    border-bottom: 1.5px solid var(--border-light);
+    background: var(--card-bg);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -312,8 +319,8 @@ import BookSection from '../components/BookSection.astro';
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 14px 28px;
-    border: 1.5px solid var(--black);
-    background: var(--black);
+    border: 1.5px solid var(--border-light);
+    background: var(--card-bg);
     color: var(--white);
     cursor: pointer;
     transition: all 0.2s;
@@ -323,6 +330,7 @@ import BookSection from '../components/BookSection.astro';
   .btn:hover {
     background: var(--orange);
     border-color: var(--orange);
+    color: var(--white);
   }
 
   @media (max-width: 1024px) {
@@ -339,7 +347,7 @@ import BookSection from '../components/BookSection.astro';
     .timeline-grid { grid-template-columns: 1fr 1fr; }
     .tl-item:nth-child(2) { border-right: none; }
     .tl-item:nth-child(1),
-    .tl-item:nth-child(2) { border-bottom: 1.5px solid var(--black); }
+    .tl-item:nth-child(2) { border-bottom: 1.5px solid var(--border-light); }
     .content-section { padding: 40px 16px; }
     .steps-grid { grid-template-columns: 1fr; }
     .step-body { grid-template-columns: 1fr; }

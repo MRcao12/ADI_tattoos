@@ -13,11 +13,8 @@ import BookSection from '../components/BookSection.astro';
   <section class="content-section">
     <SectionTitle label="ARTIST" />
     <div class="two-col">
-      <div class="placeholder-img" style="height:420px">
-        <span>[ ARTIST PORTRAIT ]</span>
-        <small>FULL WIDTH · HIGH RES</small>
-      </div>
-      <div>
+      <img src="/ADI4.jpg" alt="Artist portrait" style="width:100%;height:420px;object-fit:contain;display:block;background:#050505" />
+      <div class="artist-info">
         <div class="meta-label">OWNER & ARTIST</div>
         <div class="title-xl">[ ARTIST NAME ]</div>
         <div class="tags">
@@ -65,31 +62,28 @@ import BookSection from '../components/BookSection.astro';
 
   <section class="content-section">
     <SectionTitle label="LOCATION" />
-    <div class="two-col">
-      <div class="loc-photos">
-        <div class="placeholder-img" style="height:220px"><span>[ STOREFRONT PHOTO 1 ]</span></div>
-        <div class="placeholder-img" style="height:220px"><span>[ STOREFRONT PHOTO 2 ]</span></div>
+    <div class="loc-photos">
+      <img src="/ADI3.jpg" alt="Storefront photo" class="loc-photo" />
+      <img src="/ADI5.jpg" alt="Storefront photo" class="loc-photo" />
+    </div>
+    <div class="loc-map">
+      <div style="width:100%;line-height:0">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14089.706344963144!2d-82.73529350080263!3d28.01143481491903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c3c689fd0123%3A0x53c502efb6cba45d!2sMike+Traina%27s+Art+District!5e0!3m2!1sen!2sus!4v1781106186420!5m2!1sen!2sus" width="100%" height="360" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <div class="loc-map">
-        <div class="placeholder-img" style="height:360px">
-          <span>[ GOOGLE MAPS EMBED ]</span>
-          <small>LIVE INTERACTIVE MAP</small>
-        </div>
-        <div class="contact-row address-row">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>[ 26489 FULL STREET ADDRESS · CITY · STATE · ZIP ]</span>
-          <span class="route-btn">ROUTE ›</span>
-        </div>
+      <div class="contact-row address-row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>26489 US Hwy 19 N Suite 3, Clearwater, FL 33761</span>
+        <span class="route-btn">ROUTE ›</span>
       </div>
     </div>
   </section>
 
   <section class="content-section">
-    <SectionTitle label="INSTAGRAM" showMore={{ url: '#', label: '@INSTAGRAM HANDLE' }} />
+    <SectionTitle label="INSTAGRAM" showMore={{ url: 'https://www.instagram.com/artdistrictinc', label: '@artdistrictinc' }} />
     <div class="insta-section-label">LIVE INSTAGRAM FEED</div>
     <div class="elfsight-app-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" style="min-height:300px"></div>
     <div style="text-align:center;margin-top:20px">
-      <a href="#" class="btn-sm">FOLLOW ON INSTAGRAM ›</a>
+      <a href="https://www.instagram.com/artdistrictinc" class="btn-sm" target="_blank" rel="noopener">FOLLOW ON INSTAGRAM ›</a>
     </div>
   </section>
 
@@ -116,7 +110,7 @@ import BookSection from '../components/BookSection.astro';
 <style>
   .content-section {
     padding: 60px 40px;
-    border-bottom: 1.5px solid var(--black);
+    border-bottom: 1.5px solid var(--border-light);
   }
 
   .two-col {
@@ -125,14 +119,20 @@ import BookSection from '../components/BookSection.astro';
     gap: 40px;
   }
 
+  .artist-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .placeholder-img {
-    background: var(--gray-200);
-    border: 1.5px dashed var(--gray-400);
+    background: var(--card-bg);
+    border: 1.5px dashed rgba(212,200,184,0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     font-family: var(--font-heading);
     font-size: 10px;
     letter-spacing: 1px;
@@ -149,17 +149,17 @@ import BookSection from '../components/BookSection.astro';
 
   .placeholder-img small {
     font-size: 8px;
-    color: var(--gray-400);
+    color: rgba(255,255,255,0.35);
     margin-top: 8px;
     letter-spacing: 1px;
   }
 
   .placeholder-box {
-    background: var(--gray-100);
-    border: 1px dashed var(--gray-300);
+    background: var(--card-bg);
+    border: 1px dashed rgba(212,200,184,0.3);
     padding: 20px;
     font-size: 10px;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     line-height: 2;
     margin: 16px 0 24px;
   }
@@ -168,7 +168,7 @@ import BookSection from '../components/BookSection.astro';
     font-size: 9px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     margin-bottom: 12px;
   }
 
@@ -177,6 +177,7 @@ import BookSection from '../components/BookSection.astro';
     font-size: 32px;
     letter-spacing: 2px;
     margin-bottom: 8px;
+    color: var(--white);
   }
 
   .tags {
@@ -191,8 +192,9 @@ import BookSection from '../components/BookSection.astro';
     font-size: 8px;
     letter-spacing: 1px;
     padding: 6px 12px;
-    border: 1.5px solid var(--black);
+    border: 1.5px solid var(--border-light);
     text-transform: uppercase;
+    color: var(--white);
   }
 
   .tag-sm {
@@ -200,9 +202,10 @@ import BookSection from '../components/BookSection.astro';
     font-size: 7px;
     letter-spacing: 1px;
     padding: 4px 8px;
-    border: 1px solid var(--black);
+    border: 1px solid var(--border-light);
     text-transform: uppercase;
     margin-top: 8px;
+    color: var(--white);
   }
 
   .contact-info {
@@ -214,7 +217,7 @@ import BookSection from '../components/BookSection.astro';
     align-items: center;
     gap: 10px;
     font-size: 11px;
-    color: var(--gray-600);
+    color: rgba(255,255,255,0.7);
     padding: 10px 0;
   }
 
@@ -225,8 +228,8 @@ import BookSection from '../components/BookSection.astro';
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 14px 28px;
-    border: 1.5px solid var(--black);
-    background: var(--black);
+    border: 1.5px solid var(--border-light);
+    background: var(--card-bg);
     color: var(--white);
     cursor: pointer;
     transition: all 0.2s;
@@ -235,6 +238,7 @@ import BookSection from '../components/BookSection.astro';
   .btn:hover {
     background: var(--orange);
     border-color: var(--orange);
+    color: var(--white);
   }
 
   .btn-sm {
@@ -244,15 +248,16 @@ import BookSection from '../components/BookSection.astro';
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 10px 20px;
-    border: 1.5px solid var(--black);
-    color: var(--black);
+    border: 1.5px solid var(--border-light);
+    color: var(--white);
     cursor: pointer;
     transition: all 0.2s;
+    background: var(--card-bg);
   }
 
   .btn-sm:hover {
-    background: var(--black);
-    color: var(--white);
+    background: var(--border-light);
+    color: var(--near-black);
   }
 
   .artwork-grid-1 {
@@ -276,8 +281,18 @@ import BookSection from '../components/BookSection.astro';
 
   .loc-photos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .loc-photo {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 16 / 11;
+    object-fit: contain;
+    display: block;
+    background: #050505;
   }
 
   .loc-map {
@@ -287,24 +302,31 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .address-row {
-    border: 1.5px solid var(--black);
+    display: flex;
+    align-items: center;
+    gap: 12px;
     padding: 12px 16px;
+    border: 1.5px solid var(--border-light);
+    background: var(--card-bg);
+    color: var(--white);
   }
 
   .route-btn {
     margin-left: auto;
-    border: 1.5px solid var(--black);
+    border: 1.5px solid var(--border-light);
     padding: 6px 14px;
     font-size: 9px;
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
     flex-shrink: 0;
+    background: var(--card-bg);
+    color: var(--white);
   }
 
   .insta-section-label {
     font-size: 9px;
-    color: var(--gray-400);
+    color: rgba(255,255,255,0.35);
     letter-spacing: 1px;
     margin-bottom: 24px;
   }
@@ -317,28 +339,29 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .review-card {
-    border: 1.5px solid var(--black);
+    border: 1.5px solid var(--border-light);
     padding: 24px;
-    background: var(--gray-100);
+    background: var(--card-bg);
   }
 
   .stars {
     font-size: 14px;
     margin-bottom: 10px;
     letter-spacing: 2px;
+    color: var(--orange);
   }
 
   .review-text {
     font-size: 10px;
-    color: var(--gray-600);
+    color: rgba(255,255,255,0.7);
     line-height: 1.9;
   }
 
   .review-author {
     font-size: 9px;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     margin-top: 12px;
-    border-top: 1px solid var(--gray-300);
+    border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 10px;
   }
 

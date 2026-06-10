@@ -18,10 +18,7 @@ import BookSection from '../components/BookSection.astro';
 
   <div class="artist-layout">
     <div class="artist-portrait">
-      <div class="placeholder-img" style="height:460px">
-        <span>[ ARTIST PORTRAIT ]</span>
-        <small>HIGH RES · FULL BLEED</small>
-      </div>
+      <img src="/ADI4.jpg" alt="Artist portrait" style="width:100%;height:460px;object-fit:contain;display:block;background:#1a1a1a" />
     </div>
     <div class="artist-detail">
       <div class="meta-label">SPECIALTIES</div>
@@ -84,14 +81,15 @@ import BookSection from '../components/BookSection.astro';
 <style>
   .page-title {
     padding: 40px 40px 30px;
-    border-bottom: 1.5px solid var(--black);
+    border-bottom: 1.5px solid var(--border-light);
+    background: var(--card-bg);
   }
 
   .page-title .label {
     font-family: var(--font-heading);
     font-size: 9px;
     letter-spacing: 3px;
-    color: var(--gray-400);
+    color: rgba(255,255,255,0.5);
     text-transform: uppercase;
     margin-bottom: 12px;
   }
@@ -108,11 +106,12 @@ import BookSection from '../components/BookSection.astro';
     font-size: 36px;
     letter-spacing: 2px;
     margin: 0;
+    color: var(--white);
   }
 
   .page-title .sub {
     font-size: 9px;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     letter-spacing: 2px;
     text-transform: uppercase;
     flex-shrink: 0;
@@ -121,26 +120,30 @@ import BookSection from '../components/BookSection.astro';
   .artist-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-bottom: 1.5px solid var(--black);
+    border-bottom: 1.5px solid var(--border-light);
   }
 
   .artist-portrait {
-    border-right: 1.5px solid var(--black);
+    border-right: 1.5px solid var(--border-light);
     padding: 20px;
+    background: var(--card-bg);
   }
 
   .artist-detail {
     padding: 40px;
+    background: var(--card-bg);
+    color: var(--white);
+    border-left: 1.5px solid var(--border-light);
   }
 
   .placeholder-img {
-    background: var(--gray-200);
-    border: 1.5px dashed var(--gray-400);
+    background: var(--card-bg);
+    border: 1.5px dashed rgba(212,200,184,0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     font-family: var(--font-heading);
     font-size: 10px;
     letter-spacing: 1px;
@@ -150,11 +153,11 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .placeholder-box {
-    background: var(--gray-100);
-    border: 1px dashed var(--gray-300);
+    background: var(--card-bg);
+    border: 1px dashed rgba(212,200,184,0.3);
     padding: 20px;
     font-size: 10px;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     line-height: 2;
   }
 
@@ -162,7 +165,7 @@ import BookSection from '../components/BookSection.astro';
     font-size: 9px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     margin-bottom: 12px;
   }
 
@@ -178,8 +181,9 @@ import BookSection from '../components/BookSection.astro';
     font-size: 8px;
     letter-spacing: 1px;
     padding: 6px 12px;
-    border: 1.5px solid var(--black);
+    border: 1.5px solid var(--border-light);
     text-transform: uppercase;
+    color: var(--white);
   }
 
   .tag-sm {
@@ -187,9 +191,10 @@ import BookSection from '../components/BookSection.astro';
     font-size: 7px;
     letter-spacing: 1px;
     padding: 4px 8px;
-    border: 1px solid var(--black);
+    border: 1px solid var(--border-light);
     text-transform: uppercase;
     margin-top: 8px;
+    color: var(--white);
   }
 
   .contact-info {
@@ -204,7 +209,7 @@ import BookSection from '../components/BookSection.astro';
     align-items: center;
     gap: 10px;
     font-size: 11px;
-    color: var(--gray-600);
+    color: rgba(255,255,255,0.7);
   }
 
   .btn {
@@ -214,8 +219,8 @@ import BookSection from '../components/BookSection.astro';
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 14px 28px;
-    border: 1.5px solid var(--black);
-    background: var(--black);
+    border: 1.5px solid var(--border-light);
+    background: var(--card-bg);
     color: var(--white);
     cursor: pointer;
     transition: all 0.2s;
@@ -225,19 +230,20 @@ import BookSection from '../components/BookSection.astro';
   .btn:hover {
     background: var(--orange);
     border-color: var(--orange);
+    color: var(--white);
   }
 
   .contact-card {
-    border: 1.5px dashed var(--gray-400);
+    border: 1.5px dashed var(--border-light);
     border-top: none;
-    background: var(--gray-100);
+    background: var(--near-black);
     padding: 16px;
   }
 
   .contact-card-label {
     font-size: 9px;
     letter-spacing: 1px;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.5);
     text-transform: uppercase;
     margin-bottom: 12px;
     text-align: center;
@@ -252,14 +258,14 @@ import BookSection from '../components/BookSection.astro';
   .contact-card-note {
     margin-top: 10px;
     font-size: 9px;
-    color: var(--gray-400);
+    color: rgba(255,255,255,0.35);
     text-align: center;
     letter-spacing: 1px;
   }
 
   .content-section {
     padding: 60px 40px;
-    border-bottom: 1.5px solid var(--black);
+    border-bottom: 1.5px solid var(--border-light);
   }
 
   .artist-work-grid {
@@ -276,7 +282,7 @@ import BookSection from '../components/BookSection.astro';
 
   .placeholder-img small {
     font-size: 8px;
-    color: var(--gray-400);
+    color: rgba(255,255,255,0.35);
     margin-top: 8px;
     letter-spacing: 1px;
   }

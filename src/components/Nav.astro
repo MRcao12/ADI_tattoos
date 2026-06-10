@@ -20,7 +20,7 @@ const rightLinks = pages.slice(2);
     </div>
   </div>
   <a href="/" class="rhino-logo">
-    <img src="/weblogo2website.png" alt="Art District Inc." class="rhino-img" />
+    <img src="/ADI-rhino-crest-transparent.png" alt="Art District Inc." class="rhino-img" />
   </a>
   <div class="nav-right">
     <div class="nav-links nav-links-right">
@@ -75,8 +75,8 @@ const rightLinks = pages.slice(2);
     justify-content: space-between;
     padding: 0 48px;
     height: 96px;
-    border-bottom: 1.5px solid var(--black);
-    background: var(--white);
+    border-bottom: 2px solid var(--orange);
+    background: var(--near-black);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -107,7 +107,7 @@ const rightLinks = pages.slice(2);
     font-size: 13px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: var(--black);
+    color: var(--white);
     transition: color 0.2s;
   }
 
@@ -140,8 +140,8 @@ const rightLinks = pages.slice(2);
     letter-spacing: 2.5px;
     text-transform: uppercase;
     padding: 14px 28px;
-    border: 2px solid var(--black);
-    background: var(--black);
+    border: 2px solid var(--orange);
+    background: var(--orange);
     color: var(--white);
     cursor: pointer;
     transition: all 0.2s;
@@ -149,8 +149,9 @@ const rightLinks = pages.slice(2);
   }
 
   .cta-btn:hover {
-    background: var(--orange);
+    background: transparent;
     border-color: var(--orange);
+    color: var(--orange);
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(230, 106, 37, 0.3);
   }
@@ -164,12 +165,12 @@ const rightLinks = pages.slice(2);
     justify-content: center;
     font-size: 22px;
     cursor: pointer;
-    background: var(--white);
+    background: var(--near-black);
     padding: 0;
   }
 
   .hamburger.active {
-    background: var(--black);
+    background: var(--near-black);
     color: var(--white);
   }
 
@@ -192,10 +193,10 @@ const rightLinks = pages.slice(2);
     left: -280px;
     width: 280px;
     height: 100vh;
-    background: var(--white);
+    background: var(--near-black);
     z-index: 300;
     padding: 80px 32px 32px;
-    border-right: 1.5px solid var(--black);
+    border-right: 1.5px solid var(--border-light);
     transition: left 0.3s ease;
     flex-direction: column;
     gap: 4px;
@@ -209,7 +210,7 @@ const rightLinks = pages.slice(2);
     font-family: var(--font-heading);
     font-size: 9px;
     letter-spacing: 2px;
-    color: var(--gray-400);
+    color: var(--white);
     margin-bottom: 16px;
     text-transform: uppercase;
   }
@@ -223,8 +224,8 @@ const rightLinks = pages.slice(2);
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--black);
-    border-bottom: 1px solid var(--gray-200);
+    color: var(--white);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
   .mobile-menu a:hover {
@@ -233,7 +234,7 @@ const rightLinks = pages.slice(2);
 
   .mobile-menu a span {
     font-size: 18px;
-    color: var(--gray-400);
+    color: rgba(255,255,255,0.4);
   }
 
   @media (max-width: 768px) {
