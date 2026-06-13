@@ -13,7 +13,7 @@ import BookSection from '../components/BookSection.astro';
   <section class="content-section">
     <SectionTitle label="ARTIST" />
     <div class="two-col">
-      <img src="/ADI4.jpg" alt="Artist portrait" style="width:100%;height:420px;object-fit:contain;display:block;background:#050505" />
+      <img src="/ADI4.jpg" alt="Artist portrait" style="width:100%;height:420px;object-fit:contain;display:block" />
       <div class="artist-info">
         <div class="meta-label">OWNER & ARTIST</div>
         <div class="title-xl">[ ARTIST NAME ]</div>
@@ -290,9 +290,8 @@ import BookSection from '../components/BookSection.astro';
     width: 50%;
     height: auto;
     aspect-ratio: 16 / 11;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
-    background: #050505;
   }
 
   .loc-map {
