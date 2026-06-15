@@ -1,0 +1,41 @@
+---
+const { label = '', showMore } = Astro.props;
+---
+
+<div class="section-title">
+  {label}
+  <span></span>
+  {showMore && <a href={showMore.url} class="section-more">{showMore.label} ›</a>}
+</div>
+
+<style>
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .section-title span {
+    flex: 1;
+    height: 1px;
+    background: var(--border-light);
+  }
+
+  .section-more {
+    font-size: 9px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+
+  .section-more:hover {
+    color: var(--orange);
+  }
+</style>

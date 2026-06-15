@@ -1,102 +1,16 @@
 <div class="hero-section">
-  <div class="hero-slide" id="hero-slide-0">
-    <span>[ ROTATING GALLERY — FULL WIDTH WIDESCREEN ]</span>
-    <small>5 IMAGE SLOTS · AUTO ROTATE · TATTOOS / MURALS / FINE ART</small>
-  </div>
-  <div class="hero-slide" id="hero-slide-1" style="display:none">
-    <span>[ GALLERY IMAGE 2 ]</span>
-    <small>TATTOO · BLACK & GREY REALISM</small>
-  </div>
-  <div class="hero-slide" id="hero-slide-2" style="display:none">
-    <span>[ GALLERY IMAGE 3 ]</span>
-    <small>MURAL · LARGE FORMAT</small>
-  </div>
-  <div class="hero-slide" id="hero-slide-3" style="display:none">
-    <span>[ GALLERY IMAGE 4 ]</span>
-    <small>FINE ART CANVAS</small>
-  </div>
-  <div class="hero-slide" id="hero-slide-4" style="display:none">
-    <span>[ GALLERY IMAGE 5 ]</span>
-    <small>CUSTOM TATTOO · "PURSUIT OF HAPPINESS"</small>
-  </div>
   <div class="hero-overlay">
     <img src="/ADIlogo1web.png" alt="Art District Inc." class="hero-logo" />
     <a href="/artwork" class="hero-cta">EXPLORE THE WORK</a>
   </div>
-  <button class="hero-arrow left" id="hero-prev">‹</button>
-  <button class="hero-arrow right" id="hero-next">›</button>
-  <div class="hero-dots" id="hero-dots"></div>
 </div>
-
-<script>
-  let heroIdx = 0;
-  let heroTimer;
-
-  function heroSlide(dir) {
-    const slides = document.querySelectorAll('#hero-slide-' + heroIdx);
-    slides.forEach(s => s.style.display = 'none');
-    const oldDots = document.querySelectorAll('.hero-dot');
-    if (oldDots.length) oldDots[heroIdx]?.classList.remove('active');
-    const total = document.querySelectorAll('[id^="hero-slide-"]').length;
-    heroIdx = (heroIdx + dir + total) % total;
-    const newSlides = document.querySelectorAll('#hero-slide-' + heroIdx);
-    newSlides.forEach(s => s.style.display = 'flex');
-    if (oldDots.length) oldDots[heroIdx]?.classList.add('active');
-  }
-
-  function initHero() {
-    const dotsContainer = document.getElementById('hero-dots');
-    if (!dotsContainer) return;
-    const total = document.querySelectorAll('[id^="hero-slide-"]').length;
-    for (let i = 0; i < total; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
-      dot.addEventListener('click', () => {
-        document.querySelectorAll('[id^="hero-slide-"]').forEach(s => s.style.display = 'none');
-        document.querySelectorAll('.hero-dot').forEach(d => d.classList.remove('active'));
-        heroIdx = i;
-        document.querySelectorAll('#hero-slide-' + i).forEach(s => s.style.display = 'flex');
-        dot.classList.add('active');
-      });
-      dotsContainer.appendChild(dot);
-    }
-    heroTimer = setInterval(() => heroSlide(1), 4000);
-  }
-
-  document.getElementById('hero-prev')?.addEventListener('click', () => heroSlide(-1));
-  document.getElementById('hero-next')?.addEventListener('click', () => heroSlide(1));
-  document.addEventListener('DOMContentLoaded', initHero);
-</script>
 
 <style>
   .hero-section {
     position: relative;
-    height: 480px;
+    height: 600px;
     overflow: hidden;
-    background: var(--white);
-  }
-
-  .hero-slide {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--gray-400);
-    font-family: var(--font-heading);
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 40px;
-  }
-
-  .hero-slide small {
-    font-size: 9px;
-    color: var(--gray-600);
-    margin-top: 12px;
-    letter-spacing: 1px;
+    background: url('/ADI_hero_bw_scrim.jpg') center/cover no-repeat;
   }
 
   .hero-overlay {
@@ -152,50 +66,6 @@
     border-color: var(--orange);
   }
 
-  .hero-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
-    background: rgba(255,255,255,0.1);
-    border: none;
-    color: var(--white);
-    font-size: 32px;
-    padding: 12px 16px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .hero-arrow:hover {
-    background: rgba(255,255,255,0.2);
-  }
-
-  .hero-arrow.left { left: 0; }
-  .hero-arrow.right { right: 0; }
-
-  .hero-dots {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 3;
-  }
-
-  .hero-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.4);
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .hero-dot.active {
-    background: var(--orange);
-  }
-
   @media (max-width: 768px) {
     .hero-section { height: 360px; }
     .hero-overlay h1 { font-size: 32px; letter-spacing: 4px; }
@@ -207,6 +77,5 @@
     .hero-section { height: 280px; }
     .hero-overlay h1 { font-size: 24px; letter-spacing: 3px; }
     .hero-overlay p { font-size: 7px; letter-spacing: 2px; }
-    .hero-arrow { font-size: 24px; padding: 8px 12px; }
   }
 </style>

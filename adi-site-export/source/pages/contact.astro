@@ -1,0 +1,438 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import BookSection from '../components/BookSection.astro';
+---
+
+<Layout title="Contact | Art District Inc.">
+  <Nav currentPage="contact" />
+  <div class="page-title">
+    <div class="label">GET IN TOUCH</div>
+    <div class="flex">
+      <h1>Contact</h1>
+      <div class="sub">APPOINTMENTS BY REQUEST ONLY</div>
+    </div>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-info-col">
+      <div class="meta-label">REACH US DIRECTLY</div>
+      <div class="contact-methods">
+      <div class="contact-row-large">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div>
+          <div class="contact-method-label">EMAIL US</div>
+          <div class="contact-method-value">[ EMAIL ADDRESS ]</div>
+        </div>
+        <span class="contact-arrow">›</span>
+      </div>
+      <a href="https://www.instagram.com/artdistrictinc" class="contact-row-large" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <div>
+          <div class="contact-method-label">DM ON INSTAGRAM</div>
+          <div class="contact-method-value">@artdistrictinc</div>
+        </div>
+        <span class="contact-arrow">›</span>
+      </a>
+      </div>
+
+      <div class="meta-label" style="margin-top:40px">HOURS</div>
+      <div class="hours-table">
+        <div class="hours-row"><span>MON — FRI</span><span>[ HOURS ]</span></div>
+        <div class="hours-row"><span>SATURDAY</span><span>[ HOURS ]</span></div>
+        <div class="hours-row"><span>SUNDAY</span><span>BY APPT ONLY</span></div>
+      </div>
+    </div>
+
+    <div class="contact-map-col">
+      <form class="contact-form" netlify>
+        <div class="meta-label">SEND A MESSAGE</div>
+        <input type="text" name="name" placeholder="YOUR NAME" required />
+        <input type="email" name="email" placeholder="YOUR EMAIL" required />
+        <select name="reason" required>
+          <option value="" disabled selected>REASON</option>
+          <option value="booking">BOOKING INQUIRY</option>
+          <option value="commission">COMMISSION REQUEST</option>
+          <option value="question">GENERAL QUESTION</option>
+        </select>
+        <textarea name="message" placeholder="MESSAGE" rows="8" required></textarea>
+        <button type="submit">SEND</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="hours-strip">
+    <div class="meta-label">FIND US</div>
+    <div class="loc-grid">
+      <img src="/ADI3.jpg" alt="Storefront photo" class="loc-photo" />
+      <img src="/ADI5.jpg" alt="Storefront photo" class="loc-photo" />
+    </div>
+    <div style="width:100%;line-height:0;margin-bottom:12px">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14089.706344963144!2d-82.73529350080263!3d28.01143481491903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c3c689fd0123%3A0x53c502efb6cba45d!2sMike+Traina%27s+Art+District!5e0!3m2!1sen!2sus!4v1781106186420!5m2!1sen!2sus" width="100%" height="260" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="address-block">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div>
+        <div>26489 US Hwy 19 N Suite 3</div>
+        <div class="addr-sub">Clearwater, FL 33761</div>
+      </div>
+      <span class="dir-btn">GET DIRECTIONS ›</span>
+    </div>
+  </div>
+
+  <div class="social-section">
+    <div class="meta-label" style="text-align:center;margin-bottom:32px">FOLLOW THE WORK</div>
+    <div class="social-grid">
+      <a href="https://www.instagram.com/artdistrictinc" class="social-card" target="_blank" rel="noopener">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <div>INSTAGRAM</div>
+        <div class="social-handle">@artdistrictinc</div>
+      </a>
+      <a href="https://www.facebook.com/artdistrictinctattoo" class="social-card" target="_blank" rel="noopener">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <div>FACEBOOK</div>
+        <div class="social-handle">Art District Inc.</div>
+      </a>
+      <a href="https://www.youtube.com/@artdistrictinc" class="social-card" target="_blank" rel="noopener">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div>YOUTUBE</div>
+        <div class="social-handle">@artdistrictinc</div>
+      </a>
+      <a href="https://www.yelp.com/biz/mike-trainas-art-district-clearwater" class="social-card" target="_blank" rel="noopener">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div>YELP</div>
+        <div class="social-handle">Mike Traina's ADI</div>
+      </a>
+    </div>
+  </div>
+
+  <BookSection />
+  <Footer />
+</Layout>
+
+<style>
+  .page-title {
+    padding: 24px 40px;
+    border-bottom: 1.5px solid var(--border-light);
+    background: var(--card-bg);
+  }
+
+  .page-title .label {
+    font-family: var(--font-heading);
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .page-title .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .page-title h1 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin: 0;
+    color: var(--white);
+  }
+
+  .page-title .sub {
+    font-size: 9px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1.5px solid var(--border-light);
+  }
+
+  .contact-info-col {
+    padding: 50px 40px;
+    border-right: 1.5px solid var(--border-light);
+  }
+
+  .contact-map-col {
+    padding: 50px 40px;
+  }
+
+  .meta-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .contact-row-large {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border: 1.5px solid var(--border-light);
+    background: var(--card-bg);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .contact-row-large:hover {
+    background: var(--near-black);
+  }
+
+  .contact-method-label {
+    font-size: 9px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .contact-method-value {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .contact-arrow {
+    margin-left: auto;
+    font-size: 16px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border-light);
+    padding: 12px 14px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    color: var(--white);
+    outline: none;
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+  }
+
+  .contact-form button {
+    background: var(--orange);
+    color: var(--white);
+    border: 2px solid var(--orange);
+    padding: 14px 0;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .contact-form button:hover {
+    background: transparent;
+    border-color: var(--orange);
+    color: var(--orange);
+  }
+
+  .hours-table {
+    border: 1.5px solid var(--border-light);
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+
+  .hours-row {
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .hours-row:last-child { border-bottom: none; }
+
+  .hours-row span:first-child {
+    flex: 1;
+    padding: 14px 16px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+  }
+
+  .hours-row span:last-child {
+    flex: 1;
+    padding: 14px 16px;
+    font-size: 12px;
+    text-align: right;
+    color: var(--white);
+  }
+
+  .appt-note {
+    border: 1px dashed var(--border-light);
+    padding: 12px;
+    text-align: center;
+    font-size: 9px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .loc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .loc-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+    display: block;
+  }
+
+  .placeholder-img {
+    background: var(--card-bg);
+    border: 1.5px dashed rgba(212,200,184,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.5);
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .placeholder-img small {
+    font-size: 8px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  .address-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border-light);
+    font-size: 12px;
+    background: var(--card-bg);
+    color: var(--white);
+  }
+
+  .addr-sub {
+    font-size: 9px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+
+  .dir-btn {
+    margin-left: auto;
+    border: 1.5px solid var(--border-light);
+    padding: 8px 16px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: var(--white);
+  }
+
+  .hours-strip {
+    padding: 50px 5%;
+    border-bottom: 1.5px solid var(--border-light);
+  }
+
+  .social-section {
+    padding: 60px 40px;
+    border-bottom: 1.5px solid var(--border-light);
+    background: var(--card-bg);
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .social-card {
+    border: 1.5px solid var(--border-light);
+    padding: 24px 16px;
+    text-align: center;
+    background: var(--near-black);
+    min-height: 140px;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  .social-card:hover {
+    border-color: var(--orange);
+  }
+
+  .social-card div {
+    font-family: var(--font-heading);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .social-handle {
+    font-size: 9px !important;
+    color: rgba(255,255,255,0.5);
+    font-family: var(--font-body) !important;
+  }
+
+  @media (max-width: 1024px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-info-col { border-right: none; }
+    .social-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .page-title { padding: 16px 16px; }
+    .page-title .flex { flex-direction: column; align-items: flex-start; }
+    .page-title h1 { font-size: 24px; }
+    .contact-info-col { padding: 32px 16px; }
+    .contact-map-col { padding: 32px 16px; }
+    .hours-strip { padding: 32px 16px; }
+    .social-section { padding: 40px 16px; }
+    .social-card { min-height: 120px; padding: 16px 12px; }
+    .social-grid { grid-template-columns: repeat(2, 1fr); }
+    .hours-row span:first-child,
+    .hours-row span:last-child { padding: 10px 12px; font-size: 10px; }
+  }
+</style>

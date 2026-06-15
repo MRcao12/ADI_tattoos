@@ -1,9 +1,9 @@
 ---
 const { currentPage = 'home' } = Astro.props;
 const pages = [
-  { id: 'artwork', label: 'Artwork' },
-  { id: 'contact', label: 'Contact' },
   { id: 'artist', label: 'Artist' },
+  { id: 'contact', label: 'Contact' },
+  { id: 'artwork', label: 'Artwork' },
   { id: 'aftercare', label: 'Aftercare' },
 ];
 const leftLinks = pages.slice(0, 2);
@@ -166,6 +166,7 @@ const rightLinks = pages.slice(2);
     font-size: 22px;
     cursor: pointer;
     background: var(--near-black);
+    color: var(--white);
     padding: 0;
   }
 

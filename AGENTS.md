@@ -39,3 +39,12 @@ Tattoo studio website for Art District Inc. Built with Astro (static output for 
 ## Client Constraints
 - No phone numbers anywhere on the site
 - Mobile responsiveness is top priority
+
+## Session Log — 2026-06-11
+### Fixed Social Media Links
+- **YouTube**: Removed entirely (channel link was 404)
+- **Facebook**: Changed `artdistrictinctattoo` → `ArtDistrictInc` (wrong page)
+- **Yelp**: Changed `mike-trainas-art-district-clearwater` → `mike-trainas-art-district-tampa` (wrong slug)
+- **Instagram**: Already correct (`artdistrictinc`)
+- Updated both `Footer.astro` and `contact.astro` (social card grid)
+- Contact page social grid reduced from 4-col to 3-col after YouTube removal

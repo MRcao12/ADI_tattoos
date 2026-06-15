@@ -26,40 +26,40 @@ import BookSection from '../components/BookSection.astro';
     <div class="filter-count">[ XX ] PIECES</div>
   </div>
 
-  <div class="gallery-section">
-    <div class="artwork-grid-1">
-      <div class="placeholder-img" style="height:360px;position:relative">
-        <span>[ FEATURED PIECE — LARGE FORMAT ]</span>
-        <span class="tag" style="position:absolute;bottom:12px;left:12px;background:var(--card-bg)">TATTOO · BLACK & GREY</span>
+  <div class="gallery-section masonry">
+    {[1,2,3,4,5,6,7,8,9,10,11,12].map(i => (
+      <div class="artwork-img">
+        <img src={"/ADI_artwork" + i + ".jpg"} alt={"Artwork " + i} />
       </div>
-      <div class="grid-stack">
-        <div class="placeholder-img" style="position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 2 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">MURAL</span></div>
-        <div class="placeholder-img" style="position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 3 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">TATTOO</span></div>
-      </div>
-      <div class="grid-stack">
-        <div class="placeholder-img" style="position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 4 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">FINE ART</span></div>
-        <div class="placeholder-img" style="position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 5 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">SKETCH</span></div>
-      </div>
-    </div>
-    <div class="artwork-grid-3">
-      {[6,7,8,9].map(i => (
-        <div class="placeholder-img" style="height:220px;position:relative">
-          <span style="font-size:9px;color:var(--gray-500)">[ PIECE {i} ]</span>
-          <span class="tag-sm" style="position:absolute;bottom:8px;left:8px">{['TATTOO','MURAL','FINE ART','TATTOO'][i-6]}</span>
-        </div>
-      ))}
-    </div>
-    <div class="artwork-grid-4">
-      <div class="placeholder-img" style="height:240px;position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 10 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">SKETCH</span></div>
-      <div class="placeholder-img" style="height:240px;position:relative"><span style="font-size:10px">[ STATEMENT PIECE — WIDE FORMAT ]</span><span class="tag" style="position:absolute;bottom:8px;left:12px;background:var(--card-bg);color:var(--white)">MURAL · LARGE FORMAT</span></div>
-      <div class="placeholder-img" style="height:240px;position:relative"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 12 ]</span><span class="tag-sm" style="position:absolute;bottom:8px;left:8px">TATTOO</span></div>
-    </div>
+    ))}
   </div>
 
   <div class="gallery-footer">
     <div>— SHOWING 12 OF [ XX ] PIECES —</div>
     <span class="btn-sm">LOAD MORE ↓</span>
   </div>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    document.querySelectorAll('.artwork-img img').forEach(img => {
+      img.addEventListener('click', () => {
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lb.classList.add('open');
+      });
+    });
+    document.getElementById('lightbox')?.addEventListener('click', () => {
+      document.getElementById('lightbox').classList.remove('open');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') document.getElementById('lightbox')?.classList.remove('open');
+    });
+  </script>
 
   <div class="cta-banner">
     <div>
@@ -156,30 +156,14 @@ import BookSection from '../components/BookSection.astro';
     border-bottom: 1.5px solid var(--border-light);
   }
 
-  .artwork-grid-1 {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 12px;
+  .masonry {
+    column-count: 4;
+    column-gap: 12px;
+  }
+
+  .masonry .artwork-img {
+    break-inside: avoid;
     margin-bottom: 12px;
-  }
-
-  .artwork-grid-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
-  .artwork-grid-4 {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 12px;
-  }
-
-  .grid-stack {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 12px;
   }
 
   .placeholder-img {
@@ -196,6 +180,20 @@ import BookSection from '../components/BookSection.astro';
     text-transform: uppercase;
     text-align: center;
     padding: 20px;
+  }
+
+  .artwork-img {
+    line-height: 0;
+    overflow: hidden;
+    background: var(--card-bg);
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  .artwork-img img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .tag {
@@ -249,9 +247,33 @@ import BookSection from '../components/BookSection.astro';
     color: var(--white);
   }
 
-  .btn-sm:hover {
+  .  .btn-sm:hover {
     background: var(--border-light);
     color: var(--near-black);
+  }
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .lightbox.open {
+    display: flex;
+  }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    cursor: default;
   }
 
   .cta-banner {
@@ -301,8 +323,11 @@ import BookSection from '../components/BookSection.astro';
   }
 
   @media (max-width: 1024px) {
-    .artwork-grid-1, .artwork-grid-4 { grid-template-columns: 1fr 1fr; }
-    .artwork-grid-3 { grid-template-columns: 1fr 1fr; }
+    .masonry { column-count: 3; }
+  }
+
+  @media (max-width: 768px) {
+    .masonry { column-count: 2; }
   }
 
   @media (max-width: 600px) {
@@ -312,10 +337,8 @@ import BookSection from '../components/BookSection.astro';
     .filter-bar { flex-direction: column; gap: 12px; align-items: flex-start; padding: 16px; }
     .filter-group { flex-wrap: wrap; }
     .gallery-section { padding: 24px 16px; }
-    .artwork-grid-1, .artwork-grid-3, .artwork-grid-4 { grid-template-columns: 1fr; }
+    .masonry { column-count: 2; }
     .gallery-footer { padding: 24px 16px; flex-direction: column; gap: 12px; }
     .cta-banner { padding: 40px 24px; flex-direction: column; text-align: center; }
-    .placeholder-img[style*="height:360px"] { height: 240px !important; }
-    .placeholder-img[style*="height:240px"] { height: 160px !important; }
   }
 </style>

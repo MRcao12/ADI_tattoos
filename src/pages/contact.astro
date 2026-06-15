@@ -89,17 +89,12 @@ import BookSection from '../components/BookSection.astro';
         <div>INSTAGRAM</div>
         <div class="social-handle">@artdistrictinc</div>
       </a>
-      <a href="https://www.facebook.com/artdistrictinctattoo" class="social-card" target="_blank" rel="noopener">
+      <a href="https://www.facebook.com/ArtDistrictInc" class="social-card" target="_blank" rel="noopener">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         <div>FACEBOOK</div>
         <div class="social-handle">Art District Inc.</div>
       </a>
-      <a href="https://www.youtube.com/@artdistrictinc" class="social-card" target="_blank" rel="noopener">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <div>YOUTUBE</div>
-        <div class="social-handle">@artdistrictinc</div>
-      </a>
-      <a href="https://www.yelp.com/biz/mike-trainas-art-district-clearwater" class="social-card" target="_blank" rel="noopener">
+      <a href="https://www.yelp.com/biz/mike-trainas-art-district-tampa" class="social-card" target="_blank" rel="noopener">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <div>YELP</div>
         <div class="social-handle">Mike Traina's ADI</div>
@@ -310,9 +305,8 @@ import BookSection from '../components/BookSection.astro';
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 11;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
-    background: #050505;
   }
 
   .placeholder-img {
@@ -380,7 +374,7 @@ import BookSection from '../components/BookSection.astro';
 
   .social-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
 
@@ -397,6 +391,7 @@ import BookSection from '../components/BookSection.astro';
     justify-content: center;
     gap: 8px;
     color: var(--white);
+    cursor: pointer;
   }
 
   .social-card:hover {

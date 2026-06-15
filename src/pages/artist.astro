@@ -18,42 +18,48 @@ import BookSection from '../components/BookSection.astro';
 
   <div class="artist-layout">
     <div class="artist-portrait">
-      <img src="/ADI4.jpg" alt="Artist portrait" style="width:100%;height:460px;object-fit:contain;display:block;background:#1a1a1a" />
+      <img src="/ADI4.jpg" alt="Artist portrait" class="artist-img" />
     </div>
     <div class="artist-detail">
-      <div class="meta-label">SPECIALTIES</div>
-      <div class="tags">
-        <span class="tag">BLACK & GREY</span>
-        <span class="tag">REALISM</span>
-        <span class="tag">FINE LINE</span>
-        <span class="tag">MURALS</span>
-        <span class="tag">PORTRAITS</span>
-      </div>
-      <div class="meta-label" style="margin-top:32px">ABOUT</div>
-      <div class="placeholder-box" style="min-height:100px">
-        [ ARTIST BIO PARAGRAPH — 3 TO 4 SENTENCES ]
-      </div>
-      <div class="meta-label" style="margin-top:32px">CONTACT</div>
-      <div class="contact-info">
-        <div class="contact-row">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>[ EMAIL ADDRESS ]</span>
-        </div>
-        <div class="contact-row">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          <span>[ @INSTAGRAM HANDLE ]</span>
+      <div class="info-card">
+        <div class="meta-label">SPECIALTIES</div>
+        <div class="tags">
+          <span class="tag">BLACK & GREY</span>
+          <span class="tag">REALISM</span>
+          <span class="tag">FINE LINE</span>
+          <span class="tag">MURALS</span>
+          <span class="tag">PORTRAITS</span>
         </div>
       </div>
-      <a href="/contact" class="btn" style="width:100%;text-align:center">BOOK NOW</a>
-      <div class="contact-card">
-        <div class="contact-card-label">— CONTACT TO BOOK —</div>
-        <div class="contact-card-links">
+      <div class="info-card">
+        <div class="meta-label">ABOUT</div>
+        <div class="placeholder-box" style="min-height:100px">
+          [ ARTIST BIO PARAGRAPH — 3 TO 4 SENTENCES ]
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="meta-label">CONTACT</div>
+        <div class="contact-info">
           <div class="contact-row">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>[ EMAIL ]</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>[ EMAIL ADDRESS ]</span>
+          </div>
+          <div class="contact-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>[ @INSTAGRAM HANDLE ]</span>
           </div>
         </div>
-        <div class="contact-card-note">APPOINTMENTS ONLY</div>
+        <a href="/contact" class="btn" style="width:100%;text-align:center;margin-bottom:16px">BOOK NOW</a>
+        <div class="contact-card">
+          <div class="contact-card-label">— CONTACT TO BOOK —</div>
+          <div class="contact-card-links">
+            <div class="contact-row">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>[ EMAIL ]</span>
+            </div>
+          </div>
+          <div class="contact-card-note">APPOINTMENTS ONLY</div>
+        </div>
       </div>
     </div>
   </div>
@@ -80,9 +86,8 @@ import BookSection from '../components/BookSection.astro';
 
 <style>
   .page-title {
-    padding: 40px 40px 30px;
+    padding: 24px 40px 20px;
     border-bottom: 1.5px solid var(--border-light);
-    background: var(--card-bg);
   }
 
   .page-title .label {
@@ -125,15 +130,23 @@ import BookSection from '../components/BookSection.astro';
 
   .artist-portrait {
     border-right: 1.5px solid var(--border-light);
-    padding: 20px;
-    background: var(--card-bg);
+    padding: 5%;
+    display: flex;
+  }
+
+  .artist-img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .artist-detail {
-    padding: 40px;
-    background: var(--card-bg);
+    padding: 24px;
     color: var(--white);
     border-left: 1.5px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .placeholder-img {
@@ -233,9 +246,14 @@ import BookSection from '../components/BookSection.astro';
     color: var(--white);
   }
 
+  .info-card {
+    border: 1.5px solid var(--border-light);
+    background: rgba(26,26,26,0.85);
+    padding: 16px;
+  }
+
   .contact-card {
     border: 1.5px dashed var(--border-light);
-    border-top: none;
     background: var(--near-black);
     padding: 16px;
   }
