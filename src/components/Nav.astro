@@ -73,7 +73,7 @@ const rightLinks = pages.slice(2);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 48px;
+    padding: 0 5%;
     height: 96px;
     border-bottom: 2px solid var(--orange);
     background: var(--near-black);
@@ -85,21 +85,27 @@ const rightLinks = pages.slice(2);
   .nav-left, .nav-right {
     display: flex;
     align-items: center;
-    gap: 32px;
     flex: 1;
-  }
-
-  .nav-right {
-    justify-content: flex-end;
-  }
-
-  .nav-right {
-    justify-content: flex-end;
   }
 
   .nav-links {
     display: flex;
     gap: 38px;
+  }
+
+  .nav-links-left {
+    margin-left: 10vw;
+    margin-right: auto;
+  }
+
+  .nav-links-right {
+    margin-left: auto;
+    margin-right: 10vw;
+  }
+
+  .hamburger {
+    position: absolute;
+    left: 5%;
   }
 
   .nav-links a {
@@ -135,6 +141,8 @@ const rightLinks = pages.slice(2);
   }
 
   .cta-btn {
+    position: absolute;
+    right: 48px;
     font-family: var(--font-heading);
     font-size: 14px;
     letter-spacing: 3px;
@@ -158,6 +166,8 @@ const rightLinks = pages.slice(2);
 
   .hamburger {
     display: none;
+    position: absolute;
+    left: 5%;
     width: 44px;
     height: 44px;
     border: 2px solid var(--orange);
