@@ -50,13 +50,13 @@ import BookSection from '../components/BookSection.astro';
     <SectionTitle label="WHAT TO AVOID" />
     <div class="avoid-grid">
       {[
-        { icon: '🚫', label: 'SOAKING', desc: 'NO POOLS, OCEAN OR BATHS DURING HEALING' },
-        { icon: '🚫', label: 'PICKING', desc: 'DO NOT PICK, SCRATCH OR PEEL' },
-        { icon: '🚫', label: 'DIRECT SUN', desc: 'NO DIRECT SUNLIGHT FOR MINIMUM 3 WEEKS' },
-        { icon: '🚫', label: 'TIGHT CLOTHING', desc: 'KEEP FABRIC AWAY FROM FRESH INK' },
+        { label: 'SOAKING', desc: 'NO POOLS, OCEAN OR BATHS DURING HEALING' },
+        { label: 'PICKING', desc: 'DO NOT PICK, SCRATCH OR PEEL' },
+        { label: 'DIRECT SUN', desc: 'NO DIRECT SUNLIGHT FOR MINIMUM 3 WEEKS' },
+        { label: 'TIGHT CLOTHING', desc: 'KEEP FABRIC AWAY FROM FRESH INK' },
       ].map(item => (
         <div class="avoid-item">
-          <div class="avoid-icon">{item.icon}</div>
+          <div class="avoid-icon">✕</div>
           <div class="avoid-label">{item.label}</div>
           <div class="avoid-desc">{item.desc}</div>
         </div>
@@ -258,8 +258,12 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .avoid-icon {
-    font-size: 28px;
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--orange);
     margin-bottom: 12px;
+    line-height: 1;
   }
 
   .avoid-label {
