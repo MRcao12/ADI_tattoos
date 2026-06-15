@@ -48,3 +48,34 @@ Tattoo studio website for Art District Inc. Built with Astro (static output for 
 - **Instagram**: Already correct (`artdistrictinc`)
 - Updated both `Footer.astro` and `contact.astro` (social card grid)
 - Contact page social grid reduced from 4-col to 3-col after YouTube removal
+
+## Session Log — 2026-06-15
+### Nav Changes
+- Swapped nav order: Artist, Contact, Artwork, Aftercare
+- Increased nav links to 16px, CTA to 14px, nav gap to 38px
+- Balanced nav links: 10vw from left/right edges using absolute positioned hamburger and CTA
+- Hamburger hidden on desktop, shown on mobile at left:5%
+
+### Hero Changes
+- Removed rotating gallery slides, arrows, dots, and JS
+- Background: `ADI_hero_bw_scrim.jpg` with center/cover
+- Logo: `ADIlogo1web.png`, max-width 572px, white glow via drop-shadow filter
+- Added `maybeadilogo.png` to public (not in use)
+
+### Artwork Page
+- Converted to masonry layout (CSS columns: 4 → 3 → 2 responsive)
+- Populated with ADI_artwork1-12.jpg (no fixed heights, natural aspect ratios)
+- Added lightbox: click image opens full-size overlay with blur background
+
+### Contact Page
+- Enlarged form inputs: 22px padding, 16px font-size, 14px gap
+
+### Aftercare Page
+- Replaced 🚫 emojis with styled orange ✕ in "What to Avoid" section
+
+### Needs
+- No email address on file - awaiting from client
+- `[ EMAIL ADDRESS ]` placeholder on contact page
+- `[ HOURS ]` placeholders on contact page
+- Instagram: `@artdistrictinc` (confirmed correct)
+- ADI_artwork images from Downloads used as public assets
