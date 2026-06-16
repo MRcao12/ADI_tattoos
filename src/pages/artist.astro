@@ -21,45 +21,35 @@ import BookSection from '../components/BookSection.astro';
       <img src="/ADI4.jpg" alt="Artist portrait" class="artist-img" />
     </div>
     <div class="artist-detail">
-      <div class="info-card">
+      <div class="info-card visible-card">
         <div class="meta-label">SPECIALTIES</div>
         <div class="tags">
-          <span class="tag">BLACK & GREY</span>
-          <span class="tag">REALISM</span>
-          <span class="tag">FINE LINE</span>
-          <span class="tag">MURALS</span>
-          <span class="tag">PORTRAITS</span>
+          <span class="tag tag-lg">BLACK & GREY</span>
+          <span class="tag tag-lg">REALISM</span>
+          <span class="tag tag-lg">FINE LINE</span>
+          <span class="tag tag-lg">MURALS</span>
+          <span class="tag tag-lg">PORTRAITS</span>
         </div>
       </div>
-      <div class="info-card">
+      <div class="info-card invisible-card">
         <div class="meta-label">ABOUT</div>
-        <div class="placeholder-box" style="min-height:100px">
-          [ ARTIST BIO PARAGRAPH — 3 TO 4 SENTENCES ]
+        <div class="bio-text">
+          [ DUMMY BIO TEXT — LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT. DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR. EXCEPTEUR SINT OCCAECAT CUPIDATAT NON PROIDENT, SUNT IN CULPA QUI OFFICIA DESERUNT MOLLIT ANIM ID EST LABORUM. ]
         </div>
       </div>
-      <div class="info-card">
+      <div class="info-card invisible-card">
         <div class="meta-label">CONTACT</div>
         <div class="contact-info">
           <div class="contact-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>[ EMAIL ADDRESS ]</span>
+            <span>studio@artdistrictinc.com</span>
           </div>
           <div class="contact-row">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            <span>[ @INSTAGRAM HANDLE ]</span>
+            <span>@artdistrictinc</span>
           </div>
         </div>
-        <a href="/contact" class="btn" style="width:100%;text-align:center;margin-bottom:16px">BOOK NOW</a>
-        <div class="contact-card">
-          <div class="contact-card-label">— CONTACT TO BOOK —</div>
-          <div class="contact-card-links">
-            <div class="contact-row">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>[ EMAIL ]</span>
-            </div>
-          </div>
-          <div class="contact-card-note">APPOINTMENTS ONLY</div>
-        </div>
+        <a href="/contact" class="btn btn-lg" style="width:100%;text-align:center">BOOK NOW</a>
       </div>
     </div>
   </div>
@@ -141,12 +131,12 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .artist-detail {
-    padding: 24px;
+    padding: 40px;
     color: var(--white);
     border-left: 1.5px solid var(--border-light);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 32px;
   }
 
   .placeholder-img {
@@ -175,17 +165,17 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .meta-label {
-    font-size: 9px;
-    letter-spacing: 3px;
+    font-size: 14px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     color: rgba(255,255,255,0.5);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
   }
 
   .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 12px;
     margin-bottom: 0;
   }
 
@@ -199,6 +189,13 @@ import BookSection from '../components/BookSection.astro';
     color: var(--white);
   }
 
+  .tag-lg {
+    font-size: 18px;
+    padding: 16px 32px;
+    letter-spacing: 2px;
+    border-width: 2px;
+  }
+
   .tag-sm {
     font-family: var(--font-heading);
     font-size: 7px;
@@ -210,18 +207,25 @@ import BookSection from '../components/BookSection.astro';
     color: var(--white);
   }
 
+  .bio-text {
+    font-size: 20px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.5px;
+  }
+
   .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 24px;
+    gap: 16px;
+    margin-bottom: 32px;
   }
 
   .contact-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 11px;
+    gap: 14px;
+    font-size: 20px;
     color: rgba(255,255,255,0.7);
   }
 
@@ -237,7 +241,23 @@ import BookSection from '../components/BookSection.astro';
     color: var(--white);
     cursor: pointer;
     transition: all 0.2s;
-    margin-bottom: 16px;
+  }
+
+  .btn-lg {
+    font-size: 14px;
+    padding: 18px 36px;
+    letter-spacing: 3px;
+    border-width: 2px;
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+
+  .btn-lg:hover {
+    background: transparent;
+    border-color: var(--orange);
+    color: var(--orange);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(230, 106, 37, 0.3);
   }
 
   .btn:hover {
@@ -247,38 +267,20 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .info-card {
-    border: 1.5px solid var(--border-light);
+    padding: 16px;
+  }
+
+  .visible-card {
+    border: 2px solid var(--border-light);
     background: rgba(26,26,26,0.85);
-    padding: 16px;
+    padding: 32px;
+    margin-bottom: 8px;
   }
 
-  .contact-card {
-    border: 1.5px dashed var(--border-light);
-    background: var(--near-black);
-    padding: 16px;
-  }
-
-  .contact-card-label {
-    font-size: 9px;
-    letter-spacing: 1px;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    text-align: center;
-  }
-
-  .contact-card-links {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .contact-card-note {
-    margin-top: 10px;
-    font-size: 9px;
-    color: rgba(255,255,255,0.35);
-    text-align: center;
-    letter-spacing: 1px;
+  .invisible-card {
+    border: none;
+    background: none;
+    padding: 32px 0;
   }
 
   .content-section {
