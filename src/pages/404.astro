@@ -27,19 +27,15 @@ import Footer from '../components/Footer.astro';
   }
 
   .nf-code {
-    font-family: var(--font-heading);
+    font-family: var(--font-display);
+    font-weight: 800;
     font-size: 120px;
-    letter-spacing: 8px;
     color: rgba(255,255,255,0.15);
     line-height: 1;
     margin-bottom: 16px;
   }
 
   .not-found h1 {
-    font-family: var(--font-heading);
-    font-size: 24px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
     margin: 0 0 12px;
     color: var(--white);
   }
@@ -53,22 +49,23 @@ import Footer from '../components/Footer.astro';
 
   .btn {
     display: inline-block;
-    font-family: var(--font-heading);
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     padding: 14px 28px;
-    border: 1.5px solid var(--border-light);
-    background: var(--card-bg);
+    border: 2px solid var(--brand-orange);
+    background: var(--brand-orange);
     color: var(--white);
     cursor: pointer;
     transition: all 0.2s;
   }
 
   .btn:hover {
-    background: var(--orange);
-    border-color: var(--orange);
-    color: var(--white);
+    background: transparent;
+    border-color: var(--brand-orange);
+    color: var(--brand-orange);
   }
 
   @media (max-width: 600px) {

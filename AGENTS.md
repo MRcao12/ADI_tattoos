@@ -73,6 +73,27 @@ Tattoo studio website for Art District Inc. Built with Astro (static output for 
 ### Aftercare Page
 - Replaced 🚫 emojis with styled orange ✕ in "What to Avoid" section
 
+## Session Log — 2026-06-16
+### Font Implementation
+- Replaced Impact/Arial Black → Big Shoulders Display (headings)
+- Replaced Inter → Hanken Grotesk (body)
+- Added Martian Mono for labels/eyebrows/tags
+- New brand orange: #F95C03
+- Google Fonts loaded with display=swap
+- Updated all components, pages, and global styles
+- Removed all `--font-heading` and `--orange` references
+
+### Artist Page (home + artist page)
+- About/Contact boxes invisible with dummy lorem ipsum text
+- Specialty tags scaled up (18px with 16px/32px padding originally, then adjusted to 1rem)
+- Bio font 20px, contact rows 20px
+- Artist photo on home page now fills column height
+
+### Location Section
+- Removed ADI3.jpg (first storefront photo)
+- ADI5.jpg on left, map on right (2-col grid)
+- Same layout on both home page and contact page
+
 ### Needs
 - No email address on file - awaiting from client
 - `[ EMAIL ADDRESS ]` placeholder on contact page

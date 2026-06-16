@@ -64,12 +64,11 @@ import BookSection from '../components/BookSection.astro';
 
   <div class="hours-strip">
     <div class="meta-label">FIND US</div>
-    <div class="loc-grid">
-      <img src="/ADI3.jpg" alt="Storefront photo" class="loc-photo" />
+    <div class="loc-two-col">
       <img src="/ADI5.jpg" alt="Storefront photo" class="loc-photo" />
-    </div>
-    <div style="width:100%;line-height:0;margin-bottom:12px">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14089.706344963144!2d-82.73529350080263!3d28.01143481491903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c3c689fd0123%3A0x53c502efb6cba45d!2sMike+Traina%27s+Art+District!5e0!3m2!1sen!2sus!4v1781106186420!5m2!1sen!2sus" width="100%" height="260" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="loc-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14089.706344963144!2d-82.73529350080263!3d28.01143481491903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c3c689fd0123%3A0x53c502efb6cba45d!2sMike+Traina%27s+Art+District!5e0!3m2!1sen!2sus!4v1781106186420!5m2!1sen!2sus" width="100%" height="100%" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
     <div class="address-block">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -114,10 +113,11 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .page-title .label {
-    font-family: var(--font-heading);
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: rgba(255,255,255,0.5);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--brand-orange);
     text-transform: uppercase;
     margin-bottom: 12px;
   }
@@ -130,18 +130,14 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .page-title h1 {
-    font-family: var(--font-heading);
-    font-size: 36px;
-    letter-spacing: 2px;
     margin: 0;
     color: var(--white);
   }
 
   .page-title .sub {
-    font-size: 9px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     color: rgba(255,255,255,0.5);
-    letter-spacing: 2px;
-    text-transform: uppercase;
     flex-shrink: 0;
   }
 
@@ -161,10 +157,12 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .meta-label {
-    font-size: 9px;
-    letter-spacing: 3px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
+    color: var(--brand-orange);
     margin-bottom: 24px;
   }
 
@@ -192,16 +190,17 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .contact-method-label {
-    font-size: 9px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.75rem;
     color: rgba(255,255,255,0.5);
-    letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 3px;
   }
 
   .contact-method-value {
-    font-size: 15px;
-    letter-spacing: 1px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
   }
 
   .contact-arrow {
@@ -225,7 +224,8 @@ import BookSection from '../components/BookSection.astro';
     font-size: 16px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
+    font-weight: 500;
     color: var(--white);
     outline: none;
   }
@@ -235,22 +235,23 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .contact-form button {
-    background: var(--orange);
-    color: var(--white);
-    border: 2px solid var(--orange);
-    padding: 14px 0;
-    font-family: var(--font-heading);
-    font-size: 11px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
+    background: var(--brand-orange);
+    color: var(--white);
+    border: 2px solid var(--brand-orange);
+    padding: 14px 0;
     cursor: pointer;
     transition: all 0.2s;
   }
 
   .contact-form button:hover {
     background: transparent;
-    border-color: var(--orange);
-    color: var(--orange);
+    border-color: var(--brand-orange);
+    color: var(--brand-orange);
   }
 
   .hours-table {
@@ -269,8 +270,8 @@ import BookSection from '../components/BookSection.astro';
   .hours-row span:first-child {
     flex: 1;
     padding: 14px 16px;
-    font-size: 9px;
-    letter-spacing: 1px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     border-right: 1px solid rgba(255,255,255,0.1);
     color: rgba(255,255,255,0.7);
     text-transform: uppercase;
@@ -294,7 +295,7 @@ import BookSection from '../components/BookSection.astro';
     text-transform: uppercase;
   }
 
-  .loc-grid {
+  .loc-two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -303,9 +304,18 @@ import BookSection from '../components/BookSection.astro';
 
   .loc-photo {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 11;
+    height: 100%;
     object-fit: cover;
+    display: block;
+  }
+
+  .loc-map {
+    line-height: 0;
+  }
+
+  .loc-map iframe {
+    width: 100%;
+    height: 100%;
     display: block;
   }
 
@@ -317,19 +327,17 @@ import BookSection from '../components/BookSection.astro';
     align-items: center;
     justify-content: center;
     color: rgba(255,255,255,0.5);
-    font-family: var(--font-heading);
-    font-size: 10px;
-    letter-spacing: 1px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     text-transform: uppercase;
     text-align: center;
     padding: 20px;
   }
 
   .placeholder-img small {
-    font-size: 8px;
+    font-size: 0.625rem;
     color: rgba(255,255,255,0.35);
     margin-top: 8px;
-    letter-spacing: 1px;
   }
 
   .address-block {
@@ -395,13 +403,13 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .social-card:hover {
-    border-color: var(--orange);
+    border-color: var(--brand-orange);
   }
 
   .social-card div {
-    font-family: var(--font-heading);
-    font-size: 9px;
-    letter-spacing: 2px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.75rem;
     text-transform: uppercase;
   }
 

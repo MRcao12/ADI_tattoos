@@ -81,10 +81,11 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .page-title .label {
-    font-family: var(--font-heading);
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: rgba(255,255,255,0.5);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--brand-orange);
     text-transform: uppercase;
     margin-bottom: 12px;
   }
@@ -97,18 +98,14 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .page-title h1 {
-    font-family: var(--font-heading);
-    font-size: 36px;
-    letter-spacing: 2px;
     margin: 0;
     color: var(--white);
   }
 
   .page-title .sub {
-    font-size: 9px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     color: rgba(255,255,255,0.5);
-    letter-spacing: 2px;
-    text-transform: uppercase;
     flex-shrink: 0;
   }
 
@@ -147,9 +144,8 @@ import BookSection from '../components/BookSection.astro';
     align-items: center;
     justify-content: center;
     color: rgba(255,255,255,0.5);
-    font-family: var(--font-heading);
-    font-size: 10px;
-    letter-spacing: 1px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     text-transform: uppercase;
     text-align: center;
     padding: 20px;
@@ -159,16 +155,18 @@ import BookSection from '../components/BookSection.astro';
     background: var(--card-bg);
     border: 1px dashed rgba(212,200,184,0.3);
     padding: 20px;
-    font-size: 10px;
+    font-size: 0.75rem;
     color: rgba(255,255,255,0.5);
     line-height: 2;
   }
 
   .meta-label {
-    font-size: 14px;
-    letter-spacing: 4px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
+    color: var(--brand-orange);
     margin-bottom: 20px;
   }
 
@@ -180,9 +178,9 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .tag {
-    font-family: var(--font-heading);
-    font-size: 8px;
-    letter-spacing: 1px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.75rem;
     padding: 6px 12px;
     border: 1.5px solid var(--border-light);
     text-transform: uppercase;
@@ -190,28 +188,16 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .tag-lg {
-    font-size: 18px;
-    padding: 16px 32px;
+    font-size: 1rem;
+    padding: 12px 24px;
     letter-spacing: 2px;
     border-width: 2px;
-  }
-
-  .tag-sm {
-    font-family: var(--font-heading);
-    font-size: 7px;
-    letter-spacing: 1px;
-    padding: 4px 8px;
-    border: 1px solid var(--border-light);
-    text-transform: uppercase;
-    margin-top: 8px;
-    color: var(--white);
   }
 
   .bio-text {
     font-size: 20px;
     line-height: 1.9;
     color: rgba(255,255,255,0.85);
-    letter-spacing: 0.5px;
   }
 
   .contact-info {
@@ -231,9 +217,10 @@ import BookSection from '../components/BookSection.astro';
 
   .btn {
     display: inline-block;
-    font-family: var(--font-heading);
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     padding: 14px 28px;
     border: 1.5px solid var(--border-light);
@@ -244,25 +231,23 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .btn-lg {
-    font-size: 14px;
     padding: 18px 36px;
-    letter-spacing: 3px;
     border-width: 2px;
-    background: var(--orange);
-    border-color: var(--orange);
+    background: var(--brand-orange);
+    border-color: var(--brand-orange);
   }
 
   .btn-lg:hover {
     background: transparent;
-    border-color: var(--orange);
-    color: var(--orange);
+    border-color: var(--brand-orange);
+    color: var(--brand-orange);
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(230, 106, 37, 0.3);
+    box-shadow: 0 4px 16px rgba(249, 92, 3, 0.3);
   }
 
   .btn:hover {
-    background: var(--orange);
-    border-color: var(--orange);
+    background: var(--brand-orange);
+    border-color: var(--brand-orange);
     color: var(--white);
   }
 
@@ -301,10 +286,9 @@ import BookSection from '../components/BookSection.astro';
   }
 
   .placeholder-img small {
-    font-size: 8px;
+    font-size: 0.625rem;
     color: rgba(255,255,255,0.35);
     margin-top: 8px;
-    letter-spacing: 1px;
   }
 
   @media (max-width: 1024px) {
