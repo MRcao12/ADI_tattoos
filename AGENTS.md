@@ -1,5 +1,8 @@
 # ADI Tattoo Studio — Agent Context
 
+## IMPORTANT: Main Site Location
+The **main website** is at **`C:\Users\rcao0\ADI_tattoos\`** (local project with 12 commits, real images, orange #F95C03 theme, full branding). NOT the GitHub clone or wireframes. When user says "main page" or "main website", serve from this directory.
+
 ## Golden Rule
 - **ASK BEFORE MAKING ANY CHANGES** — do not edit, create, or delete any file in the project without first proposing the change and getting explicit approval. This applies to Astro source files, components, pages, config, styles, images, and any other project assets.
 
