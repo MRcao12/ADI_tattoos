@@ -41,16 +41,24 @@ import BookSection from '../components/BookSection.astro';
 
   <section class="content-section">
     <SectionTitle label="ARTWORK" showMore={{ url: '/artwork', label: 'VIEW FULL GALLERY' }} />
-    <div class="artwork-masonry">
-      <div class="artwork-main">
-        <img class="mural-img" src="/ADI_artwork12.jpg" alt="Mural" />
-        <img src="/ADI_artwork9.jpg" alt="Artwork 9" />
+    <div class="artwork-grid-1">
+      <div class="placeholder-img" style="height:300px">
+        <span>[ FEATURED PIECE ]</span>
+        <span class="tag" style="margin-top:8px;display:inline-block">TATTOO · BLACK & GREY</span>
       </div>
-      <div class="artwork-side">
-          {[2,7,11,1].map(i => (
-          <img src={"/ADI_tattoos" + i + ".jpg"} alt={"Tattoo " + i} />
-        ))}
+      <div class="placeholder-img" style="height:300px">
+        <span>[ PIECE 2 ]</span>
+        <span class="tag">MURAL</span>
       </div>
+      <div class="grid-stack">
+        <div class="placeholder-img"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 3 ]</span><span class="tag-sm">FINE ART</span></div>
+        <div class="placeholder-img"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 4 ]</span><span class="tag-sm">SKETCH</span></div>
+      </div>
+    </div>
+    <div class="artwork-grid-2">
+      <div class="placeholder-img" style="height:200px"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 5 ]</span><span class="tag-sm">TATTOO</span></div>
+      <div class="placeholder-img" style="height:200px"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 6 ]</span><span class="tag-sm">MURAL</span></div>
+      <div class="placeholder-img" style="height:200px"><span style="font-size:9px;color:var(--gray-500)">[ PIECE 7 ]</span><span class="tag-sm">FINE ART</span></div>
     </div>
   </section>
 
@@ -261,48 +269,6 @@ import BookSection from '../components/BookSection.astro';
     color: var(--near-black);
   }
 
-  .artwork-masonry {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 12px;
-  }
-
-  .artwork-main {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    line-height: 0;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .artwork-main .mural-img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .artwork-main img:not(.mural-img) {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 2px;
-  }
-
-  .artwork-side {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .artwork-side img {
-    width: 90%;
-    height: auto;
-    display: block;
-    border-radius: 2px;
-    margin: 0 auto;
-  }
-
   .artwork-grid-1 {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -312,9 +278,8 @@ import BookSection from '../components/BookSection.astro';
 
   .artwork-grid-2 {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 12px;
-    margin-top: 12px;
   }
 
   .grid-stack {
@@ -414,16 +379,12 @@ import BookSection from '../components/BookSection.astro';
   @media (max-width: 1024px) {
     .two-col { grid-template-columns: 1fr; gap: 24px; }
     .artwork-grid-1 { grid-template-columns: 1fr 1fr; }
-    .artwork-masonry { grid-template-columns: 1fr 1fr; }
     .reviews-grid { grid-template-columns: 1fr 1fr; }
   }
 
   @media (max-width: 600px) {
     .content-section { padding: 40px 16px; }
     .artwork-grid-1, .artwork-grid-2, .reviews-grid { grid-template-columns: 1fr; }
-    .artwork-masonry { grid-template-columns: 1fr; }
-    .artwork-side { flex-direction: row; flex-wrap: wrap; }
-    .artwork-side img { width: calc(33.33% - 8px); }
     .title-xl { font-size: 24px; }
     .two-col { gap: 16px; }
     .placeholder-img[style*="height:420px"] { height: 280px !important; }

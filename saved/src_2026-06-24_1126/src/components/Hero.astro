@@ -1,0 +1,71 @@
+<div class="hero-section">
+  <div class="hero-overlay">
+    <img src="/ADIlogo1web.png" alt="Art District Inc." class="hero-logo" />
+    <a href="/artwork" class="hero-cta">EXPLORE THE WORK</a>
+  </div>
+</div>
+
+<style>
+  .hero-section {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    background: url('/ADI_hero_bw_scrim.jpg') center/cover no-repeat;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+    padding: 40px;
+  }
+
+  .hero-logo {
+    max-width: min(572px, 80%);
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+    display: block;
+    filter: drop-shadow(0 0 18px rgba(255,255,255,0.8)) drop-shadow(0 0 40px rgba(255,255,255,0.4));
+  }
+
+  .hero-cta {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: 2px solid var(--white);
+    color: var(--white);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: var(--brand-orange);
+    border-color: var(--brand-orange);
+  }
+
+  @media (max-width: 768px) {
+    .hero-section { height: 360px; }
+    .hero-logo { max-width: min(400px, 85%); }
+    .hero-overlay h1 { font-size: 32px; letter-spacing: 4px; }
+    .hero-overlay p { font-size: 8px; }
+    .hero-cta { padding: 12px 24px; font-size: 9px; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-section { height: 280px; }
+    .hero-logo { max-width: min(280px, 90%); }
+    .hero-overlay h1 { font-size: 24px; letter-spacing: 3px; }
+    .hero-overlay p { font-size: 7px; letter-spacing: 2px; }
+  }
+</style>

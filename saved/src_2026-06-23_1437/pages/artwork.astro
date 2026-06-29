@@ -27,22 +27,15 @@ import BookSection from '../components/BookSection.astro';
   </div>
 
   <div class="gallery-section masonry">
-    {[
-      {p:'artwork',n:3},{p:'tattoos',n:7},{p:'artwork',n:1},{p:'tattoos',n:2},
-      {p:'artwork',n:11},{p:'tattoos',n:5},{p:'artwork',n:9},{p:'tattoos',n:10},
-      {p:'artwork',n:6},{p:'tattoos',n:4},{p:'artwork',n:12},{p:'tattoos',n:1},
-      {p:'artwork',n:8},{p:'tattoos',n:8},{p:'artwork',n:4},{p:'tattoos',n:12},
-      {p:'artwork',n:2},{p:'tattoos',n:6},{p:'artwork',n:7},{p:'tattoos',n:3},
-      {p:'artwork',n:5},{p:'tattoos',n:9},{p:'artwork',n:10},{p:'tattoos',n:11}
-    ].map(i => (
+    {[1,2,3,4,5,6,7,8,9,10,11,12].map(i => (
       <div class="artwork-img">
-        <img src={"/ADI_" + i.p + i.n + ".jpg"} alt={i.p + " " + i.n} />
+        <img src={"/ADI_artwork" + i + ".jpg"} alt={"Artwork " + i} />
       </div>
     ))}
   </div>
 
   <div class="gallery-footer">
-    <div>— SHOWING 24 OF [ XX ] PIECES —</div>
+    <div>— SHOWING 12 OF [ XX ] PIECES —</div>
     <span class="btn-sm">LOAD MORE ↓</span>
   </div>
 

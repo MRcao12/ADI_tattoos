@@ -25,23 +25,28 @@ http.createServer((req, res) => {
   filePath = path.normalize(filePath);
   if (!filePath.startsWith(dist)) { res.writeHead(403); res.end(); return; }
   
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      if (err.code === 'ENOENT') {
-        const notFound = path.join(dist, '404.html');
-        fs.readFile(notFound, (e2, d2) => {
-          res.writeHead(e2 ? 404 : 404, { 'Content-Type': 'text/html' });
-          res.end(d2 || 'Not Found');
-        });
-      } else {
-        res.writeHead(500);
-        res.end('Internal Server Error');
+  fs.stat(filePath, (statErr, stats) => {
+    if (statErr && statErr.code !== 'ENOENT') { res.writeHead(500); res.end('Internal Server Error'); return; }
+    if (stats && stats.isDirectory()) { filePath = path.join(filePath, 'index.html'); }
+
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        if (err.code === 'ENOENT') {
+          const notFound = path.join(dist, '404.html');
+          fs.readFile(notFound, (e2, d2) => {
+            res.writeHead(e2 ? 404 : 404, { 'Content-Type': 'text/html' });
+            res.end(d2 || 'Not Found');
+          });
+        } else {
+          res.writeHead(500);
+          res.end('Internal Server Error');
+        }
+        return;
       }
-      return;
-    }
     const ext = path.extname(filePath).toLowerCase();
     res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
     res.end(data);
+    });
   });
 }).listen(4321, '0.0.0.0', () => {
   console.log('Serving dist/ on http://0.0.0.0:4321');
